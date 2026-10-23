@@ -1,0 +1,155 @@
+
+.signup-page {
+  min-height: 100vh;
+  position: relative;
+  padding: 5px 12px 35px;
+  background: #f6f8fa;
+  overflow: hidden;
+}
+
+.signup-image {
+  height: 365px;
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(63, 25, 104, 0.65),
+      rgba(4, 69, 105, 0.55),
+      rgba(145, 26, 89, 0.6)
+    ),
+    url("/background img.jpeg") center / cover no-repeat;
+}
+
+.signup-container {
+  position: relative;
+  width: min(400px, 94%);
+  margin: -300px auto 35px;
+}
+
+.signup-container > h1 {
+  margin-bottom: 8px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.signup-container > p {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+}
+
+.signup-container form {
+  padding: 25px 22px;
+  background: white;
+  color: #344054;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.signup-container form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 19px;
+}
+
+.signup-container form > label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.signup-container form > input,
+.signup-password input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 0 12px;
+  border: 1px solid #d8dde3;
+  border-radius: 7px;
+  outline: none;
+  font-size: 13px;
+}
+
+.signup-container input:focus {
+  border-color: #b000b5;
+}
+
+.signup-password {
+  position: relative;
+}
+
+.signup-password input {
+  padding-right: 42px;
+}
+
+.signup-password button {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  color: #8993a4;
+  cursor: pointer;
+}
+
+.create-account {
+  width: 100%;
+  min-height: 40px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #ed008c, #9d00c7);
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.create-account:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.signup-container .signup-message {
+  margin: 12px 0 0;
+  color: #8a168f;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.signup-container .login-link {
+  margin: 18px 0 0;
+  color: #8993a4;
+  font-size: 12px;
+}
+
+.login-link a {
+  color: #a000c7;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .signup-image {
+    height: 300px;
+  }
+
+  .signup-container {
+    margin-top: -250px;
+  }
+
+  .signup-container > h1 {
+    font-size: 25px;
+  }
+
+  .signup-container form {
+    padding: 22px 16px;
+  }
+}
