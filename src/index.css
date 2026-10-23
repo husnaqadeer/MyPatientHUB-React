@@ -1,0 +1,42 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f8fa;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+/* Main application layout */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar */
+.app-layout .sidebar {
+    flex-shrink: 0;
+}
+
+/* Main content area */
+.main-area {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Page content below the header */
+.page-content {
+    padding: 25px 30px;
+    width: 100%;
+    box-sizing: border-box;
+}

@@ -1,0 +1,557 @@
+
+.marketplace-page {
+    min-height: 100vh;
+    padding: 28px;
+    background: #f5f7fa;
+    color: #344054;
+    font-family: Arial, sans-serif;
+}
+
+.marketplace-page * {
+    box-sizing: border-box;
+}
+
+.marketplace-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #fce7f6, #f3e8ff);
+}
+
+.marketplace-label {
+    color: #9e00c7;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.marketplace-hero h1 {
+    max-width: 600px;
+    margin: 12px 0;
+    color: #344054;
+    font-size: 30px;
+    line-height: 1.3;
+}
+
+.marketplace-hero p {
+    margin: 0;
+    color: #697586;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.cart-summary {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 190px;
+    padding: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.cart-icon {
+    font-size: 27px;
+}
+
+.cart-summary strong {
+    color: #344054;
+    font-size: 14px;
+}
+
+.cart-summary p {
+    margin-top: 6px;
+    color: #9e00c7;
+    font-weight: 700;
+}
+
+.marketplace-card,
+.results-section,
+.cart-details {
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(16, 24, 40, 0.04);
+}
+
+.marketplace-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.marketplace-section-heading h2,
+.cart-details h2 {
+    margin: 0 0 7px;
+    color: #344054;
+    font-size: 21px;
+}
+
+.marketplace-section-heading p,
+.cart-details > div p {
+    margin: 0;
+    color: #697586;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.product-count {
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: #fce7f6;
+    color: #9e00c7;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.marketplace-filters {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 180px 180px;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.marketplace-filters input,
+.marketplace-filters select,
+.table-search {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    outline: none;
+    background: #ffffff;
+    color: #344054;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.marketplace-filters input:focus,
+.marketplace-filters select:focus,
+.table-search:focus {
+    border-color: #e300b0;
+    box-shadow: 0 0 0 3px rgba(227, 0, 176, 0.1);
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(16, 24, 40, 0.08);
+}
+
+.product-image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 205px;
+    padding: 15px;
+    background: #fafafa;
+}
+
+.medical-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.stock-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 9px;
+    border-radius: 20px;
+    background: #dcfae6;
+    color: #067647;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.stock-badge.low-stock {
+    background: #fef0c7;
+    color: #93370d;
+}
+
+.product-card-content {
+    padding: 17px;
+}
+
+.product-category {
+    color: #9e00c7;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-card h3 {
+    margin: 9px 0;
+    color: #344054;
+    font-size: 16px;
+}
+
+.product-description {
+    min-height: 42px;
+    margin: 0 0 12px;
+    color: #697586;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.product-company {
+    margin: 0;
+    color: #98a2b3;
+    font-size: 11px;
+}
+
+.product-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-top: 16px;
+    margin-top: 15px;
+    border-top: 1px solid #e4e7ec;
+}
+
+.product-price {
+    color: #344054;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+.buy-button,
+.reset-button {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 7px;
+    background: linear-gradient(135deg, #e300b0, #9e00c7);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.buy-button:hover,
+.reset-button:hover {
+    background: linear-gradient(135deg, #c9009c, #7e00a0);
+}
+
+.no-products {
+    grid-column: 1 / -1;
+    padding: 35px 15px;
+    text-align: center;
+}
+
+.no-products h3 {
+    margin-bottom: 8px;
+}
+
+.no-products p {
+    color: #697586;
+    font-size: 13px;
+}
+
+.reset-button {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+/* Product Directory */
+.table-top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 18px;
+}
+
+.table-search-label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 260px;
+    color: #697586;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.table-container th {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e4e7ec;
+    background: #fafafa;
+    color: #697586;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+}
+
+.table-container td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e4e7ec;
+    color: #475467;
+    font-size: 12px;
+}
+
+.table-container tbody tr:hover {
+    background: #fdf7fc;
+}
+
+.name-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.name-cell img {
+    width: 38px;
+    height: 38px;
+    padding: 3px;
+    border: 1px solid #e4e7ec;
+    border-radius: 7px;
+    background: #ffffff;
+    object-fit: contain;
+}
+
+.empty-table {
+    padding: 20px;
+    color: #697586;
+    font-size: 13px;
+    text-align: center;
+}
+
+.table-footer {
+    margin: 18px 0 0;
+    color: #697586;
+    font-size: 12px;
+}
+
+/* Shopping Cart */
+.cart-details > ul {
+    padding: 0;
+    margin: 20px 0;
+    list-style: none;
+}
+
+.cart-details li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e4e7ec;
+    font-size: 13px;
+}
+
+.cart-details li button {
+    padding: 7px 10px;
+    border: 1px solid #f0abfc;
+    border-radius: 6px;
+    background: #fdf2fa;
+    color: #9e00c7;
+    cursor: pointer;
+}
+
+.demo-notice {
+    padding: 12px;
+    border-radius: 8px;
+    background: #f9fafb;
+    color: #697586;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Existing Marketplace Footer Styles */
+.marketplace-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 5px;
+    color: #697586;
+    font-size: 12px;
+}
+
+.marketplace-footer p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.marketplace-footer strong {
+    color: #344054;
+}
+
+.marketplace-footer div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.marketplace-footer a {
+    color: #697586;
+    text-decoration: none;
+}
+
+.marketplace-footer a:hover {
+    color: #e300b0;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .products-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .marketplace-filters {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .marketplace-filters input {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .marketplace-page {
+        padding: 14px;
+    }
+
+    .marketplace-hero {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 22px;
+    }
+
+    .marketplace-hero h1 {
+        font-size: 24px;
+    }
+
+    .marketplace-card,
+    .results-section,
+    .cart-details {
+        padding: 16px;
+    }
+
+    .marketplace-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .marketplace-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .marketplace-filters input {
+        grid-column: auto;
+    }
+
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image-container {
+        height: 220px;
+    }
+
+    .table-search-label {
+        width: 100%;
+    }
+
+    .cart-details li {
+        align-items: flex-start;
+    }
+
+    .marketplace-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Shared MyPatientHUB Footer */
+.doctor-footer {
+    margin-top: 35px;
+    padding: 24px 10px 8px;
+    border-top: 1px solid #e4e7ec;
+    color: #667085;
+    text-align: center;
+}
+
+.doctor-footer > p {
+    margin: 0 0 12px;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.footer-heart {
+    color: #9e00c7;
+}
+
+.doctor-footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #98a2b3;
+    font-size: 11px;
+}
+
+.doctor-footer-links span + span::before {
+    content: "|";
+    margin-right: 10px;
+    color: #d0d5dd;
+}
+
+/* Footer on small mobile screens */
+@media (max-width: 420px) {
+    .doctor-footer-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .doctor-footer-links span + span::before {
+        content: "";
+        margin: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-card {
+        transition: none;
+    }
+}
