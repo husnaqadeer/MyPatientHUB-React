@@ -404,7 +404,7 @@ function Appointments() {
             onClick={resetDemoAppointments}
             title="Restore the original sample appointments"
           >
-            Reset demo data
+            Reset data
           </button>
         </div>
 

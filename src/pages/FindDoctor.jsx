@@ -122,7 +122,6 @@ function FindDoctor() {
 
     const [openService, setOpenService] = useState(null);
     const [showResults, setShowResults] = useState(true);
-    const [locationStatus, setLocationStatus] = useState("");
 
     const [selectedDoctor, setSelectedDoctor] = useState(null);
     const [bookingName, setBookingName] = useState("");
@@ -183,31 +182,6 @@ function FindDoctor() {
 
     function handleLocationChange(event) {
         setLocation(event.target.value);
-        setLocationStatus("");
-    }
-
-    function handleCurrentLocation() {
-        if (!navigator.geolocation) {
-            setLocationStatus(
-                "Location access is not supported by this browser. Enter a city instead."
-            );
-            return;
-        }
-
-        setLocationStatus("Requesting location permission...");
-
-        navigator.geolocation.getCurrentPosition(
-            () => {
-                setLocationStatus(
-                    "Location permission granted. Enter your city above to filter the sample doctors. Results are not ranked by distance."
-                );
-            },
-            () => {
-                setLocationStatus(
-                    "Location access was unavailable. You can enter your city manually."
-                );
-            }
-        );
     }
 
     function handleSpecialtyClick(specialty) {
@@ -227,7 +201,6 @@ function FindDoctor() {
         setSpecialtyFilter("");
         setAvailabilityFilter("");
         setSortBy("recommended");
-        setLocationStatus("");
         setBookingMessage("");
         setSelectedDoctor(null);
         setShowResults(true);
@@ -267,6 +240,11 @@ function FindDoctor() {
 
     return (
         <main className="find-doctor-page">
+
+            {/* =========================
+                HERO SECTION
+            ========================= */}
+
             <section className="doctor-hero">
                 <div className="doctor-hero-content">
                     <span className="doctor-eyebrow">
@@ -321,18 +299,9 @@ function FindDoctor() {
                         </label>
 
                         <button
-                            type="button"
-                            className="doctor-location-btn"
-                            onClick={handleCurrentLocation}
+                            type="submit"
+                            className="doctor-search-btn"
                         >
-                            <i
-                                className="fa-solid fa-location-crosshairs"
-                                aria-hidden="true"
-                            />
-                            Use my location
-                        </button>
-
-                        <button type="submit" className="doctor-search-btn">
                             Find Doctors
                             <i
                                 className="fa-solid fa-arrow-right"
@@ -340,12 +309,6 @@ function FindDoctor() {
                             />
                         </button>
                     </form>
-
-                    {locationStatus && (
-                        <p className="location-status" role="status">
-                            {locationStatus}
-                        </p>
-                    )}
 
                     <div className="doctor-hero-note">
                         <i
@@ -357,6 +320,10 @@ function FindDoctor() {
                 </div>
             </section>
 
+            {/* =========================
+                DOCTOR RESULTS
+            ========================= */}
+
             <section
                 className="doctor-results-section"
                 id="doctor-results"
@@ -366,7 +333,9 @@ function FindDoctor() {
                         <span className="results-eyebrow">
                             EXPLORE YOUR OPTIONS
                         </span>
+
                         <h2>Meet your next doctor</h2>
+
                         <p>
                             Search our sample directory by specialty,
                             availability, or city.
@@ -375,13 +344,16 @@ function FindDoctor() {
 
                     <span className="doctor-result-count">
                         {filteredDoctors.length}{" "}
-                        {filteredDoctors.length === 1 ? "profile" : "profiles"}
+                        {filteredDoctors.length === 1
+                            ? "profile"
+                            : "profiles"}
                     </span>
                 </div>
 
                 <div className="doctor-filter-panel">
                     <label className="doctor-filter-field">
                         <span>Specialty</span>
+
                         <select
                             value={specialtyFilter}
                             onChange={(event) =>
@@ -389,8 +361,12 @@ function FindDoctor() {
                             }
                         >
                             <option value="">All specialties</option>
+
                             {specialties.map((specialty) => (
-                                <option key={specialty} value={specialty}>
+                                <option
+                                    key={specialty}
+                                    value={specialty}
+                                >
                                     {specialty}
                                 </option>
                             ))}
@@ -399,6 +375,7 @@ function FindDoctor() {
 
                     <label className="doctor-filter-field">
                         <span>Availability</span>
+
                         <select
                             value={availabilityFilter}
                             onChange={(event) =>
@@ -420,16 +397,25 @@ function FindDoctor() {
 
                     <label className="doctor-filter-field">
                         <span>Sort by</span>
+
                         <select
                             value={sortBy}
-                            onChange={(event) => setSortBy(event.target.value)}
+                            onChange={(event) =>
+                                setSortBy(event.target.value)
+                            }
                         >
-                            <option value="recommended">Recommended</option>
-                            <option value="rating">Highest rating</option>
+                            <option value="recommended">
+                                Recommended
+                            </option>
+                            <option value="rating">
+                                Highest rating
+                            </option>
                             <option value="experience">
                                 Most experience
                             </option>
-                            <option value="name">Doctor name</option>
+                            <option value="name">
+                                Doctor name
+                            </option>
                         </select>
                     </label>
 
@@ -534,11 +520,14 @@ function FindDoctor() {
                             className="fa-solid fa-user-doctor"
                             aria-hidden="true"
                         />
+
                         <h3>No matching profiles</h3>
+
                         <p>
-                            Try another search, city, specialty, or availability
-                            option.
+                            Try another search, city, specialty, or
+                            availability option.
                         </p>
+
                         <button
                             type="button"
                             className="book-doctor-btn"
@@ -550,6 +539,10 @@ function FindDoctor() {
                 )}
             </section>
 
+            {/* =========================
+                APPOINTMENT FORM
+            ========================= */}
+
             {selectedDoctor && (
                 <section
                     className="appointment-section"
@@ -559,14 +552,17 @@ function FindDoctor() {
                         <span className="results-eyebrow">
                             YOUR NEXT STEP
                         </span>
+
                         <h2>Request an appointment</h2>
+
                         <p>
                             Selected doctor:{" "}
                             <strong>{selectedDoctor.name}</strong>
                         </p>
+
                         <p>
-                            Complete this demo form to see how an appointment
-                            request could work.
+                            Complete this demo form to see how an
+                            appointment request could work.
                         </p>
                     </div>
 
@@ -616,7 +612,10 @@ function FindDoctor() {
                         </label>
 
                         <div className="appointment-form-actions">
-                            <button type="submit" className="book-doctor-btn">
+                            <button
+                                type="submit"
+                                className="book-doctor-btn"
+                            >
                                 Prepare Demo Request
                             </button>
 
@@ -631,12 +630,16 @@ function FindDoctor() {
 
                         <p className="appointment-demo-note">
                             Demo only. Do not enter sensitive medical
-                            information. This form does not send your details
-                            to a clinic or reserve an appointment.
+                            information. This form does not send your
+                            details to a clinic or reserve an appointment.
                         </p>
                     </form>
                 </section>
             )}
+
+            {/* =========================
+                BOOKING CONFIRMATION
+            ========================= */}
 
             {bookingMessage && (
                 <div className="booking-message" role="status">
@@ -644,7 +647,9 @@ function FindDoctor() {
                         className="fa-solid fa-circle-check"
                         aria-hidden="true"
                     />
+
                     <p>{bookingMessage}</p>
+
                     <button
                         type="button"
                         onClick={() => setBookingMessage("")}
@@ -655,15 +660,21 @@ function FindDoctor() {
                 </div>
             )}
 
+            {/* =========================
+                SPECIAL SERVICES
+            ========================= */}
+
             <section className="special-services">
                 <div className="doctor-section-heading">
                     <span className="results-eyebrow">
                         CARE AND SUPPORT
                     </span>
+
                     <h2>Explore our services</h2>
+
                     <p>
-                        Learn about different types of healthcare services.
-                        Select a topic to read more.
+                        Learn about different types of healthcare
+                        services. Select a topic to read more.
                     </p>
                 </div>
 
@@ -671,7 +682,9 @@ function FindDoctor() {
                     {services.map((service, index) => (
                         <article
                             className={`service-card ${
-                                openService === index ? "service-open" : ""
+                                openService === index
+                                    ? "service-open"
+                                    : ""
                             }`}
                             key={service.title}
                         >
@@ -694,7 +707,9 @@ function FindDoctor() {
 
                                 <i
                                     className={`fa-solid fa-chevron-down service-chevron ${
-                                        openService === index ? "rotated" : ""
+                                        openService === index
+                                            ? "rotated"
+                                            : ""
                                     }`}
                                     aria-hidden="true"
                                 />
@@ -710,15 +725,21 @@ function FindDoctor() {
                 </div>
             </section>
 
+            {/* =========================
+                SPECIALTIES
+            ========================= */}
+
             <section className="specialty-section">
                 <div className="doctor-section-heading">
                     <span className="results-eyebrow">
                         BROWSE BY SPECIALTY
                     </span>
+
                     <h2>What kind of care do you need?</h2>
+
                     <p>
-                        Choose a specialty to filter the sample doctor
-                        directory.
+                        Choose a specialty to filter the sample
+                        doctor directory.
                     </p>
                 </div>
 
@@ -749,6 +770,10 @@ function FindDoctor() {
                     ))}
                 </div>
             </section>
+
+            {/* =========================
+                FOOTER
+            ========================= */}
 
             <footer className="doctor-footer">
                 <p>

@@ -1,5 +1,7 @@
 
-/* SIDEBAR */
+/* =========================
+   SIDEBAR
+========================= */
 
 .sidebar {
     box-sizing: border-box;
@@ -23,7 +25,9 @@
     flex-shrink: 0;
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .sidebar .logo {
     display: flex;
@@ -113,7 +117,9 @@
     white-space: nowrap;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 .sidebar nav {
     display: flex;
@@ -160,7 +166,9 @@
     color: #bd00ac;
 }
 
-/* HELP SECTION */
+/* =========================
+   HELP SECTION
+========================= */
 
 .sidebar .help {
     display: flex;
@@ -201,7 +209,9 @@
     white-space: nowrap;
 }
 
-/* SIDEBAR CLOSED: KEEP A SMALL ICON BAR */
+/* =========================
+   SIDEBAR CLOSED
+========================= */
 
 .app-layout .sidebar.closed {
     width: 70px;
@@ -232,7 +242,9 @@
     padding: 12px 0;
 }
 
-/* DESKTOP APP LAYOUT */
+/* =========================
+   DESKTOP APP LAYOUT
+========================= */
 
 .app-layout {
     display: flex;
@@ -247,9 +259,76 @@
     min-width: 0;
 }
 
-/* TABLET */
+/* =========================
+   DARK MODE - SIDEBAR
+========================= */
+
+body.dark-mode .sidebar {
+    background: #1e293b;
+    border-right-color: #334155;
+}
+
+/* DARK LOGO */
+
+body.dark-mode .sidebar .logo {
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .sidebar .logo-name {
+    color: #f1f5f9;
+}
+
+body.dark-mode .sidebar .logo-name span {
+    color: #f472d0;
+}
+
+body.dark-mode .sidebar .logo-text small {
+    color: #94a3b8;
+}
+
+/* DARK NAVIGATION */
+
+body.dark-mode .sidebar .sidebar-link {
+    color: #cbd5e1;
+}
+
+body.dark-mode .sidebar .sidebar-link:hover {
+    background: #334155;
+    color: #f9a8d4;
+}
+
+/* DARK ACTIVE LINK */
+
+body.dark-mode .sidebar .sidebar-link.active {
+    background: #473052;
+    color: #f9a8d4;
+    font-weight: 600;
+}
+
+body.dark-mode .sidebar .sidebar-link.active i {
+    color: #f472d0;
+}
+
+/* DARK HELP SECTION */
+
+body.dark-mode .sidebar .help {
+    background: linear-gradient(135deg, #b00092, #6d28d9);
+}
+
+body.dark-mode .sidebar .help-text strong {
+    color: #ffffff;
+}
+
+body.dark-mode .sidebar .help-text small {
+    color: #f5e6ff;
+}
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 900px) and (min-width: 601px) {
+
     .app-layout .sidebar:not(.closed) {
         width: 220px;
         flex-basis: 220px;
@@ -262,14 +341,19 @@
     }
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
+
     .app-layout {
         display: block;
         width: 100%;
     }
 
-/* Turn the sidebar into a top navigation bar */
+    /* TOP NAVIGATION BAR */
+
     .app-layout .sidebar,
     .app-layout .sidebar:not(.closed),
     .app-layout .sidebar.closed {
@@ -296,7 +380,8 @@
         z-index: 1000;
     }
 
-/* Keep the logo at the top */
+    /* MOBILE LOGO */
+
     .app-layout .sidebar .logo,
     .app-layout .sidebar.closed .logo {
         display: flex;
@@ -320,7 +405,8 @@
         display: flex;
     }
 
-/* Make the links a horizontal, scrollable menu */
+    /* HORIZONTAL NAVIGATION */
+
     .app-layout .sidebar nav {
         display: flex;
         flex-direction: row;
@@ -336,7 +422,8 @@
         -webkit-overflow-scrolling: touch;
     }
 
-/* Each navigation item */
+    /* MOBILE LINKS */
+
     .app-layout .sidebar .sidebar-link,
     .app-layout .sidebar.closed .sidebar-link {
         display: inline-flex;
@@ -358,32 +445,59 @@
         font-size: 14px;
     }
 
-/* Always show link labels on mobile */
+    /* SHOW LABELS ON MOBILE */
+
     .app-layout .sidebar .sidebar-link span,
     .app-layout .sidebar.closed .sidebar-link span {
         display: inline;
     }
 
-/* Keep the active page easy to recognize */
+    /* ACTIVE MOBILE LINK */
+
     .app-layout .sidebar .sidebar-link.active {
         background: #f8eafa;
         color: #a000bd;
     }
 
-/* Hide the help box to save phone screen space */
+    /* HIDE HELP SECTION ON MOBILE */
+
     .app-layout .sidebar .help,
     .app-layout .sidebar.closed .help {
         display: none;
     }
 
-/* The closed desktop sidebar must not hide the mobile menu */
     .app-layout .sidebar.closed {
         transform: none;
     }
 
-/* Main page uses the full phone width */
+    /* FULL WIDTH MAIN AREA */
+
     .app-layout .main-area {
         width: 100%;
         min-width: 0;
+    }
+
+    /* =========================
+       MOBILE DARK MODE
+    ========================= */
+
+    body.dark-mode .app-layout .sidebar,
+    body.dark-mode .app-layout .sidebar:not(.closed),
+    body.dark-mode .app-layout .sidebar.closed {
+        background: #1e293b;
+        border-right: none;
+        border-bottom: 1px solid #334155;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    body.dark-mode .app-layout .sidebar .logo,
+    body.dark-mode .app-layout .sidebar.closed .logo {
+        border-bottom-color: #334155;
+    }
+
+    body.dark-mode .app-layout .sidebar .sidebar-link.active,
+    body.dark-mode .app-layout .sidebar.closed .sidebar-link.active {
+        background: #473052;
+        color: #f9a8d4;
     }
 }

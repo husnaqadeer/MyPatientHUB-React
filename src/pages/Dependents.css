@@ -3,7 +3,8 @@
    GENERAL STYLES
 ========================= */
 
-* {
+.profile-page,
+.profile-page * {
     box-sizing: border-box;
 }
 
@@ -19,11 +20,11 @@
    PAGE HEADING
 ========================= */
 
-.page-heading {
+.profile-page .page-heading {
     margin-bottom: 30px;
 }
 
-.page-heading h1 {
+.profile-page .page-heading h1 {
     text-align: center;
     margin: 0;
     font-size: 30px;
@@ -31,7 +32,7 @@
     color: #344b70;
 }
 
-.page-heading p {
+.profile-page .page-heading p {
     text-align: center;
     margin: 8px 0 0;
     font-size: 15px;
@@ -43,20 +44,20 @@
    PROGRESS BAR
 ========================= */
 
-.progress-section {
+.profile-page .progress-section {
     width: 650px;
     max-width: 100%;
     margin: 0 auto 35px;
 }
 
-.progress-line {
+.profile-page .progress-line {
     height: 4px;
     background-color: #e9dce9;
     position: relative;
     margin: 0 60px;
 }
 
-.progress-filled {
+.profile-page .progress-filled {
     position: absolute;
     height: 4px;
     background-color: #c026a8;
@@ -65,19 +66,19 @@
     transition: width 0.3s ease;
 }
 
-.progress-filled.step-one {
+.profile-page .progress-filled.step-one {
     width: 0%;
 }
 
-.progress-filled.step-two {
+.profile-page .progress-filled.step-two {
     width: 50%;
 }
 
-.progress-filled.step-three {
+.profile-page .progress-filled.step-three {
     width: 100%;
 }
 
-.progress-circle {
+.profile-page .progress-circle {
     position: absolute;
     width: 22px;
     height: 22px;
@@ -89,20 +90,20 @@
     z-index: 1;
 }
 
-.progress-circle.active {
+.profile-page .progress-circle.active {
     background-color: #c026a8;
     border-color: #c026a8;
 }
 
-.progress-circle.first {
+.profile-page .progress-circle.first {
     left: 0;
 }
 
-.progress-circle.second {
+.profile-page .progress-circle.second {
     left: 50%;
 }
 
-.progress-circle.third {
+.profile-page .progress-circle.third {
     left: 100%;
 }
 
@@ -110,7 +111,7 @@
    STEP LABELS
 ========================= */
 
-.step-labels {
+.profile-page .step-labels {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
@@ -120,7 +121,7 @@
     line-height: 1.4;
 }
 
-.step-labels .current {
+.profile-page .step-labels .current {
     color: #a90088;
     font-weight: 600;
 }
@@ -129,7 +130,7 @@
    MAIN CARD
 ========================= */
 
-.main-card {
+.profile-page .main-card {
     width: 100%;
     max-width: 850px;
     margin: 0 auto;
@@ -144,9 +145,9 @@
    STEP HEADINGS
 ========================= */
 
-.registration-step h2,
-.health-step h2,
-.review-title {
+.profile-page .registration-step h2,
+.profile-page .health-step h2,
+.profile-page .review-title {
     text-align: center;
     font-size: 23px;
     font-weight: 500;
@@ -154,7 +155,7 @@
     color: #344b70;
 }
 
-.description {
+.profile-page .description {
     text-align: center;
     color: #8496b3;
     font-size: 15px;
@@ -166,7 +167,7 @@
    TWO COLUMNS
 ========================= */
 
-.two-columns {
+.profile-page .two-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 22px;
@@ -177,22 +178,22 @@
    INPUTS
 ========================= */
 
-.input-group {
+.profile-page .input-group {
     display: flex;
     flex-direction: column;
     min-width: 0;
 }
 
-.input-group label {
+.profile-page .input-group label {
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 8px;
     color: #344b70;
 }
 
-.input-group input,
-.input-group select,
-.input-group textarea {
+.profile-page .input-group input,
+.profile-page .input-group select,
+.profile-page .input-group textarea {
     width: 100%;
     min-width: 0;
     border: 1px solid #d5dce6;
@@ -204,18 +205,19 @@
     color: #344b70;
     background-color: white;
     outline: none;
-    transition: border-color 0.2s ease,
-                box-shadow 0.2s ease;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.input-group input::placeholder,
-.input-group textarea::placeholder {
+.profile-page .input-group input::placeholder,
+.profile-page .input-group textarea::placeholder {
     color: #a9b5c8;
 }
 
-.input-group input:focus,
-.input-group select:focus,
-.input-group textarea:focus {
+.profile-page .input-group input:focus,
+.profile-page .input-group select:focus,
+.profile-page .input-group textarea:focus {
     border-color: #c026a8;
     box-shadow: 0 0 0 3px rgba(192, 38, 168, 0.1);
 }
@@ -224,17 +226,17 @@
    BIRTH DATE
 ========================= */
 
-.birth-group {
+.profile-page .birth-group {
     margin-bottom: 25px;
 }
 
-.birth-inputs {
+.profile-page .birth-inputs {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: 15px;
 }
 
-.birth-inputs select {
+.profile-page .birth-inputs select {
     appearance: auto;
 }
 
@@ -242,16 +244,16 @@
    HEALTH RECORDS
 ========================= */
 
-.health-form {
+.profile-page .health-form {
     max-width: 600px;
     margin: 0 auto 30px;
 }
 
-.health-form .input-group {
+.profile-page .health-form .input-group {
     margin-bottom: 22px;
 }
 
-.input-group textarea {
+.profile-page .input-group textarea {
     min-height: 120px;
     padding: 12px 13px;
     resize: vertical;
@@ -262,11 +264,11 @@
    REVIEW INFORMATION
 ========================= */
 
-.review-title {
+.profile-page .review-title {
     margin-bottom: 10px;
 }
 
-.review-card {
+.profile-page .review-card {
     padding: 22px;
     margin-bottom: 28px;
     background: #fdf8fc;
@@ -275,7 +277,7 @@
     overflow-wrap: anywhere;
 }
 
-.review-heading {
+.profile-page .review-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -283,36 +285,36 @@
     margin-bottom: 15px;
 }
 
-.review-heading h3 {
+.profile-page .review-heading h3 {
     margin: 0;
     font-size: 16px;
     color: #344b70;
 }
 
-.review-grid {
+.profile-page .review-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px 18px;
 }
 
-.review-card p {
+.profile-page .review-card p {
     margin: 8px 0;
     color: #71829a;
     font-size: 13px;
     line-height: 1.7;
 }
 
-.review-card strong {
+.profile-page .review-card strong {
     color: #344b70;
 }
 
-.health-review-heading {
+.profile-page .health-review-heading {
     margin-top: 22px;
     padding-top: 18px;
     border-top: 1px solid #eaddea;
 }
 
-.edit-button {
+.profile-page .edit-button {
     border: none;
     background: transparent;
     color: #b01898;
@@ -321,7 +323,7 @@
     cursor: pointer;
 }
 
-.edit-button:hover {
+.profile-page .edit-button:hover {
     color: #7e0877;
     text-decoration: underline;
 }
@@ -330,20 +332,20 @@
    CARE PLANS
 ========================= */
 
-.choose-plan-title {
+.profile-page .choose-plan-title {
     margin: 0 0 18px;
     font-size: 20px;
     color: #344b70;
     text-align: center;
 }
 
-.plans {
+.profile-page .plans {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
 }
 
-.plan-card {
+.profile-page .plan-card {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -358,31 +360,32 @@
     font-family: Arial, sans-serif;
     text-align: left;
     cursor: pointer;
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease,
-                border-color 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
 }
 
-.plan-card:hover {
+.profile-page .plan-card:hover {
     transform: translateY(-3px);
     border-color: #d58acb;
     box-shadow: 0 8px 20px rgba(192, 38, 168, 0.12);
 }
 
-.plan-card.selected-plan {
+.profile-page .plan-card.selected-plan {
     border: 2px solid #c026a8;
     background-color: #fff8fe;
     box-shadow: 0 6px 18px rgba(192, 38, 168, 0.12);
 }
 
-.plan-card h3 {
+.profile-page .plan-card h3 {
     margin: 0 0 8px;
     font-size: 17px;
     line-height: 1.4;
     color: #344b70;
 }
 
-.plan-description {
+.profile-page .plan-description {
     min-height: 34px;
     margin: 0;
     color: #8496b3;
@@ -390,34 +393,34 @@
     line-height: 1.5;
 }
 
-.plan-line {
+.profile-page .plan-line {
     height: 1px;
     background-color: #eadfea;
     margin: 15px 0;
 }
 
-.detail {
+.profile-page .detail {
     display: flex;
     align-items: flex-start;
     gap: 8px;
     margin-bottom: 13px;
 }
 
-.detail span {
+.profile-page .detail span {
     color: #c026a8;
     font-size: 17px;
     font-weight: bold;
     line-height: 1.3;
 }
 
-.detail p {
+.profile-page .detail p {
     margin: 0;
     font-size: 12px;
     line-height: 1.5;
     color: #526984;
 }
 
-.plan-selection {
+.profile-page .plan-selection {
     display: block;
     margin-top: auto;
     padding-top: 15px;
@@ -430,7 +433,7 @@
    BUTTONS
 ========================= */
 
-.button-container {
+.profile-page .button-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -438,13 +441,13 @@
     margin-top: 25px;
 }
 
-.next-container {
+.profile-page .next-container {
     justify-content: flex-end;
 }
 
-.back-button,
-.next-button,
-.send-button {
+.profile-page .back-button,
+.profile-page .next-button,
+.profile-page .send-button {
     min-height: 44px;
     border: none;
     padding: 0 24px;
@@ -452,47 +455,48 @@
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease,
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.back-button {
+.profile-page .back-button {
     background-color: #f0e7f1;
     color: #344b70;
     box-shadow: 0 4px 10px rgba(52, 75, 112, 0.05);
 }
 
-.next-button {
+.profile-page .next-button {
     background-color: #344b70;
     color: white;
 }
 
-.send-button {
+.profile-page .send-button {
     background-color: #a90088;
     color: white;
 }
 
-.back-button:hover,
-.next-button:hover,
-.send-button:hover {
+.profile-page .back-button:hover,
+.profile-page .next-button:hover,
+.profile-page .send-button:hover {
     background-color: #c026a8;
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(176, 0, 199, 0.18);
 }
 
-.back-button:active,
-.next-button:active,
-.send-button:active {
+.profile-page .back-button:active,
+.profile-page .next-button:active,
+.profile-page .send-button:active {
     transform: translateY(0);
 }
 
-.back-button:focus-visible,
-.next-button:focus-visible,
-.send-button:focus-visible,
-.plan-card:focus-visible,
-.edit-button:focus-visible {
+.profile-page .back-button:focus-visible,
+.profile-page .next-button:focus-visible,
+.profile-page .send-button:focus-visible,
+.profile-page .plan-card:focus-visible,
+.profile-page .edit-button:focus-visible {
     outline: 3px solid #e8a6df;
     outline-offset: 3px;
 }
@@ -501,7 +505,7 @@
    SHARED FOOTER
 ========================= */
 
-.doctor-footer {
+.profile-page .doctor-footer {
     margin-top: 35px;
     padding: 24px 10px 8px;
     border-top: 1px solid #e4e7ec;
@@ -509,17 +513,17 @@
     text-align: center;
 }
 
-.doctor-footer > p {
+.profile-page .doctor-footer > p {
     margin: 0 0 12px;
     font-size: 12px;
     line-height: 1.8;
 }
 
-.footer-heart {
+.profile-page .footer-heart {
     color: #9e00c7;
 }
 
-.doctor-footer-links {
+.profile-page .doctor-footer-links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -528,10 +532,318 @@
     font-size: 11px;
 }
 
-.doctor-footer-links span + span::before {
+.profile-page .doctor-footer-links span + span::before {
     content: "|";
     margin-right: 10px;
     color: #d0d5dd;
+}
+
+/* =========================================
+   DARK MODE - MAIN PAGE
+========================================= */
+
+body.dark-mode .profile-page {
+    color: #f1f5f9;
+    color-scheme: dark;
+}
+
+/* =========================================
+   DARK MODE - PAGE HEADING
+========================================= */
+
+body.dark-mode .profile-page .page-heading h1 {
+    color: #f8fafc;
+}
+
+body.dark-mode .profile-page .page-heading p {
+    color: #cbd5e1;
+}
+
+/* =========================================
+   DARK MODE - PROGRESS BAR
+========================================= */
+
+body.dark-mode .profile-page .progress-line {
+    background-color: #475569;
+}
+
+body.dark-mode .profile-page .progress-filled {
+    background-color: #e879f9;
+}
+
+body.dark-mode .profile-page .progress-circle {
+    background-color: #334155;
+    border-color: #64748b;
+    box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.3);
+}
+
+body.dark-mode .profile-page .progress-circle.active {
+    background-color: #c026d3;
+    border-color: #f0abfc;
+    box-shadow: 0 0 10px rgba(232, 121, 249, 0.35);
+}
+
+body.dark-mode .profile-page .step-labels {
+    color: #cbd5e1;
+}
+
+body.dark-mode .profile-page .step-labels .current {
+    color: #f0abfc;
+    font-weight: 700;
+}
+
+/* =========================================
+   DARK MODE - MAIN CARD
+========================================= */
+
+body.dark-mode .profile-page .main-card {
+    background-color: #1e293b;
+    border-color: #475569;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   DARK MODE - STEP HEADINGS
+========================================= */
+
+body.dark-mode .profile-page .registration-step h2,
+body.dark-mode .profile-page .health-step h2,
+body.dark-mode .profile-page .review-title {
+    color: #f8fafc;
+}
+
+body.dark-mode .profile-page .description {
+    color: #cbd5e1;
+}
+
+/* =========================================
+   DARK MODE - FORM LABELS
+========================================= */
+
+body.dark-mode .profile-page .input-group label {
+    color: #f1f5f9;
+}
+
+/* =========================================
+   DARK MODE - INPUTS AND SELECTS
+========================================= */
+
+body.dark-mode .profile-page .input-group input,
+body.dark-mode .profile-page .input-group select,
+body.dark-mode .profile-page .input-group textarea {
+    background-color: #334155;
+    border-color: #64748b;
+    color: #ffffff;
+}
+
+body.dark-mode .profile-page .input-group input::placeholder,
+body.dark-mode .profile-page .input-group textarea::placeholder {
+    color: #cbd5e1;
+}
+
+body.dark-mode .profile-page .input-group input:focus,
+body.dark-mode .profile-page .input-group select:focus,
+body.dark-mode .profile-page .input-group textarea:focus {
+    border-color: #e879f9;
+    box-shadow: 0 0 0 3px rgba(232, 121, 249, 0.18);
+}
+
+/* Keep dropdown options readable */
+
+body.dark-mode .profile-page .input-group select option {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+/* =========================================
+   DARK MODE - REVIEW CARD
+========================================= */
+
+body.dark-mode .profile-page .review-card {
+    background-color: #263449;
+    border-color: #64748b;
+}
+
+body.dark-mode .profile-page .review-heading h3 {
+    color: #f8fafc;
+}
+
+body.dark-mode .profile-page .review-card p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .profile-page .review-card strong {
+    color: #ffffff;
+}
+
+body.dark-mode .profile-page .health-review-heading {
+    border-top-color: #475569;
+}
+
+/* =========================================
+   DARK MODE - EDIT BUTTON
+========================================= */
+
+body.dark-mode .profile-page .edit-button {
+    color: #f0abfc;
+}
+
+body.dark-mode .profile-page .edit-button:hover {
+    color: #ffffff;
+}
+
+/* =========================================
+   DARK MODE - CARE PLAN TITLE
+========================================= */
+
+body.dark-mode .profile-page .choose-plan-title {
+    color: #f8fafc;
+}
+
+/* =========================================
+   DARK MODE - CARE PLAN CARDS
+========================================= */
+
+body.dark-mode .profile-page .plan-card {
+    background-color: #263449;
+    border-color: #64748b;
+    color: #f1f5f9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .profile-page .plan-card:hover {
+    border-color: #e879f9;
+    box-shadow: 0 8px 20px rgba(232, 121, 249, 0.15);
+}
+
+/* Selected plan stands out clearly */
+
+body.dark-mode .profile-page .plan-card.selected-plan {
+    background-color: #3b2457;
+    border: 2px solid #e879f9;
+    box-shadow: 0 0 0 2px rgba(232, 121, 249, 0.12);
+}
+
+body.dark-mode .profile-page .plan-card h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .profile-page .plan-description {
+    color: #cbd5e1;
+}
+
+body.dark-mode .profile-page .plan-line {
+    background-color: #475569;
+}
+
+/* =========================================
+   DARK MODE - PLAN DETAILS AND CHECKMARKS
+========================================= */
+
+body.dark-mode .profile-page .detail span {
+    color: #f0abfc;
+    font-size: 19px;
+    font-weight: 800;
+    opacity: 1;
+    visibility: visible;
+}
+
+body.dark-mode .profile-page .detail p {
+    color: #e2e8f0;
+}
+
+body.dark-mode .profile-page .plan-selection {
+    color: #f0abfc;
+    font-weight: 700;
+}
+
+/* =========================================
+   DARK MODE - BUTTONS
+========================================= */
+
+body.dark-mode .profile-page .back-button {
+    background-color: #334155;
+    border: 1px solid #64748b;
+    color: #ffffff;
+}
+
+body.dark-mode .profile-page .next-button {
+    background-color: #475569;
+    color: #ffffff;
+}
+
+body.dark-mode .profile-page .send-button {
+    background-color: #a21caf;
+    color: #ffffff;
+}
+
+body.dark-mode .profile-page .back-button:hover,
+body.dark-mode .profile-page .next-button:hover,
+body.dark-mode .profile-page .send-button:hover {
+    background-color: #c026d3;
+    color: #ffffff;
+}
+
+/* =========================================
+   DARK MODE - ICON VISIBILITY
+========================================= */
+
+body.dark-mode .profile-page .detail i,
+body.dark-mode .profile-page .detail svg {
+    color: #f0abfc;
+    opacity: 1;
+    visibility: visible;
+}
+
+body.dark-mode .profile-page .back-button i,
+body.dark-mode .profile-page .next-button i,
+body.dark-mode .profile-page .send-button i,
+body.dark-mode .profile-page .back-button svg,
+body.dark-mode .profile-page .next-button svg,
+body.dark-mode .profile-page .send-button svg {
+    color: #ffffff;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================================
+   DARK MODE - FOOTER
+========================================= */
+
+body.dark-mode .profile-page .doctor-footer {
+    border-top-color: #475569;
+    color: #cbd5e1;
+}
+
+body.dark-mode .profile-page .footer-heart {
+    color: #f0abfc;
+}
+
+body.dark-mode .profile-page .doctor-footer-links {
+    color: #cbd5e1;
+}
+
+body.dark-mode .profile-page .doctor-footer-links span + span::before {
+    color: #64748b;
+}
+
+/* =========================================
+   SMOOTH THEME TRANSITIONS
+========================================= */
+
+.profile-page,
+.profile-page .main-card,
+.profile-page .review-card,
+.profile-page .plan-card,
+.profile-page .progress-circle,
+.profile-page .progress-line,
+.profile-page .input-group input,
+.profile-page .input-group select,
+.profile-page .input-group textarea {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
 
 /* =========================
@@ -543,27 +855,27 @@
         padding: 30px 20px 20px;
     }
 
-    .page-heading h1 {
+    .profile-page .page-heading h1 {
         font-size: 28px;
     }
 
-    .main-card {
+    .profile-page .main-card {
         padding: 28px;
     }
 
-    .plans {
+    .profile-page .plans {
         grid-template-columns: 1fr;
     }
 
-    .plan-card {
+    .profile-page .plan-card {
         min-height: auto;
     }
 
-    .plan-description {
+    .profile-page .plan-description {
         min-height: 0;
     }
 
-    .plan-selection {
+    .profile-page .plan-selection {
         margin-top: 8px;
     }
 }
@@ -577,109 +889,109 @@
         padding: 25px 12px 15px;
     }
 
-    .page-heading {
+    .profile-page .page-heading {
         margin-bottom: 25px;
     }
 
-    .page-heading h1 {
+    .profile-page .page-heading h1 {
         font-size: 25px;
     }
 
-    .page-heading p {
+    .profile-page .page-heading p {
         font-size: 14px;
         line-height: 1.6;
     }
 
-    .progress-section {
+    .profile-page .progress-section {
         width: 100%;
         margin-bottom: 30px;
     }
 
-    .progress-line {
+    .profile-page .progress-line {
         margin: 0 35px;
     }
 
-    .progress-circle {
+    .profile-page .progress-circle {
         width: 19px;
         height: 19px;
     }
 
-    .step-labels {
+    .profile-page .step-labels {
         font-size: 10px;
         gap: 4px;
     }
 
-    .main-card {
+    .profile-page .main-card {
         padding: 22px 16px;
         border-radius: 14px;
     }
 
-    .registration-step h2,
-    .health-step h2,
-    .review-title {
+    .profile-page .registration-step h2,
+    .profile-page .health-step h2,
+    .profile-page .review-title {
         font-size: 20px;
         line-height: 1.4;
     }
 
-    .description {
+    .profile-page .description {
         font-size: 13px;
         margin-bottom: 25px;
     }
 
-    .two-columns {
+    .profile-page .two-columns {
         grid-template-columns: 1fr;
         gap: 18px;
         margin-bottom: 22px;
     }
 
-    .birth-inputs {
+    .profile-page .birth-inputs {
         grid-template-columns: 1.2fr 0.8fr 1fr;
         gap: 8px;
     }
 
-    .birth-inputs select {
+    .profile-page .birth-inputs select {
         padding: 0 7px;
         font-size: 12px;
     }
 
-    .review-card {
+    .profile-page .review-card {
         padding: 16px;
     }
 
-    .review-grid {
+    .profile-page .review-grid {
         grid-template-columns: 1fr;
         gap: 2px;
     }
 
-    .review-card p {
+    .profile-page .review-card p {
         font-size: 12px;
     }
 
-    .choose-plan-title {
+    .profile-page .choose-plan-title {
         font-size: 18px;
         line-height: 1.4;
     }
 
-    .plans {
+    .profile-page .plans {
         grid-template-columns: 1fr;
     }
 
-    .plan-card {
+    .profile-page .plan-card {
         padding: 22px;
     }
 
-    .button-container {
+    .profile-page .button-container {
         margin-top: 20px;
     }
 
-    .back-button,
-    .next-button,
-    .send-button {
+    .profile-page .back-button,
+    .profile-page .next-button,
+    .profile-page .send-button {
         padding: 0 18px;
         font-size: 12px;
     }
 
-    .doctor-footer {
+    .profile-page .doctor-footer {
         padding-top: 20px;
     }
 }
@@ -689,13 +1001,24 @@
 ========================= */
 
 @media (max-width: 420px) {
-    .doctor-footer-links {
+    .profile-page .doctor-footer-links {
         flex-direction: column;
         gap: 5px;
     }
 
-    .doctor-footer-links span + span::before {
+    .profile-page .doctor-footer-links span + span::before {
         content: "";
         margin: 0;
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-page,
+    .profile-page * {
+        transition: none !important;
     }
 }

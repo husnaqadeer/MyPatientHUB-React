@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
     BrowserRouter,
     Navigate,
@@ -29,9 +29,31 @@ import AccountSettings from "./pages/AccountSettings";
 function DashboardLayout() {
     const [sidebarOpen, setSidebarOpen] = useState(true);
 
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        return localStorage.getItem("theme") === "dark";
+    });
+
     function toggleSidebar() {
         setSidebarOpen((previousState) => !previousState);
     }
+
+    function toggleTheme() {
+        setIsDarkMode((previousState) => !previousState);
+    }
+
+    useEffect(() => {
+        if (isDarkMode) {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+        }
+
+        return () => {
+            document.body.classList.remove("dark-mode");
+        };
+    }, [isDarkMode]);
 
     return (
         <div
@@ -42,7 +64,11 @@ function DashboardLayout() {
             <Sidebar sidebarOpen={sidebarOpen} />
 
             <div className="main-area">
-                <Header toggleSidebar={toggleSidebar} />
+                <Header
+                    toggleSidebar={toggleSidebar}
+                    isDarkMode={isDarkMode}
+                    toggleTheme={toggleTheme}
+                />
 
                 <main className="page-content">
                     <Outlet />

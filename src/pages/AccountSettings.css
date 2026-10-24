@@ -6,7 +6,8 @@
 .account-settings-page {
   min-height: 100vh;
   padding: 30px;
-  color: #263548;
+  background: #f5f7fa;
+  color: #344054;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
 }
@@ -14,6 +15,10 @@
 .account-settings-page * {
   box-sizing: border-box;
 }
+
+/* =========================
+   PAGE HEADING
+========================= */
 
 .settings-heading {
   display: flex;
@@ -24,7 +29,7 @@
 }
 
 .settings-eyebrow {
-  color: #c0268c;
+  color: #9e00c7;
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 1.5px;
@@ -33,12 +38,12 @@
 .settings-heading h1 {
   margin: 8px 0;
   font-size: 30px;
-  color: #203247;
+  color: #344054;
 }
 
 .settings-heading p {
   margin: 0;
-  color: #7a8797;
+  color: #697586;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -50,8 +55,8 @@
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background-color: #fce7f3;
-  color: #a21caf;
+  background: linear-gradient(135deg, #fce7f6, #f3e8ff);
+  color: #9e00c7;
   font-size: 26px;
 }
 
@@ -69,17 +74,17 @@
 }
 
 /* =========================
-   SIDEBAR
+   SETTINGS SIDEBAR
 ========================= */
 
 .settings-sidebar {
   position: sticky;
   top: 20px;
   padding: 22px 15px;
-  background-color: white;
-  border: 1px solid #f0e4ef;
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
   border-radius: 15px;
-  box-shadow: 0 4px 18px rgba(112, 35, 92, 0.05);
+  box-shadow: 0 4px 18px rgba(16, 24, 40, 0.04);
 }
 
 .sidebar-profile {
@@ -87,7 +92,7 @@
   align-items: center;
   gap: 12px;
   padding: 5px 5px 22px;
-  border-bottom: 1px solid #f3eaf2;
+  border-bottom: 1px solid #e4e7ec;
 }
 
 .sidebar-profile img {
@@ -100,18 +105,18 @@
 .sidebar-profile h3 {
   margin: 0 0 5px;
   font-size: 14px;
-  color: #263548;
+  color: #344054;
 }
 
 .sidebar-profile p {
   margin: 0;
-  color: #8491a2;
+  color: #697586;
   font-size: 12px;
 }
 
 .sidebar-label {
   margin: 24px 8px 12px;
-  color: #98a2b1;
+  color: #98a2b3;
   font-size: 10px;
   font-weight: bold;
   letter-spacing: 1.2px;
@@ -124,7 +129,7 @@
   margin-bottom: 5px;
   padding: 12px 10px;
   border-radius: 8px;
-  color: #657386;
+  color: #697586;
   font-size: 13px;
   text-decoration: none;
   transition: background-color 0.2s, color 0.2s;
@@ -137,8 +142,8 @@
 
 .settings-nav-link:hover,
 .settings-nav-link.active {
-  background-color: #fce7f3;
-  color: #a21caf;
+  background: #fce7f6;
+  color: #9e00c7;
 }
 
 .settings-nav-link.active {
@@ -146,7 +151,7 @@
 }
 
 .settings-nav-link.danger-link:hover {
-  background-color: #fff0f0;
+  background: #fff0f0;
   color: #c33d43;
 }
 
@@ -154,28 +159,29 @@
   margin-top: 30px;
   padding: 16px 12px;
   border-radius: 10px;
-  background-color: #f7f0fc;
+  background: linear-gradient(120deg, #fce7f6, #f3e8ff);
 }
 
 .sidebar-help > span {
   font-size: 21px;
+  color: #9e00c7;
 }
 
 .sidebar-help h4 {
   margin: 10px 0 6px;
   font-size: 13px;
-  color: #71345f;
+  color: #9e00c7;
 }
 
 .sidebar-help p {
   margin: 0;
-  color: #936783;
+  color: #697586;
   font-size: 11px;
   line-height: 1.7;
 }
 
 /* =========================
-   SETTINGS CONTENT AND CARDS
+   SETTINGS CONTENT
 ========================= */
 
 .settings-content {
@@ -185,10 +191,10 @@
 .settings-card {
   margin-bottom: 22px;
   padding: 26px;
-  background-color: white;
-  border: 1px solid #f0e4ef;
+  background: #ffffff;
+  border: 1px solid #e4e7ec;
   border-radius: 15px;
-  box-shadow: 0 4px 18px rgba(112, 35, 92, 0.04);
+  box-shadow: 0 4px 18px rgba(16, 24, 40, 0.04);
   scroll-margin-top: 20px;
 }
 
@@ -202,13 +208,13 @@
 
 .section-heading h2 {
   margin: 0 0 7px;
-  color: #263548;
+  color: #344054;
   font-size: 19px;
 }
 
 .section-heading p {
   margin: 0;
-  color: #8793a2;
+  color: #697586;
   font-size: 12px;
   line-height: 1.6;
 }
@@ -221,7 +227,8 @@
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background-color: #f8eff8;
+  background: #f3e8ff;
+  color: #9e00c7;
   font-size: 20px;
 }
 
@@ -239,7 +246,7 @@
   width: 76px;
   height: 76px;
   flex-shrink: 0;
-  border: 3px solid #f5d0fe;
+  border: 3px solid #f3e8ff;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -251,14 +258,14 @@
 
 .profile-name h3 {
   margin: 0 0 7px;
-  color: #263548;
+  color: #344054;
   font-size: 17px;
   overflow-wrap: anywhere;
 }
 
 .profile-name p {
   margin: 0 0 10px;
-  color: #8793a2;
+  color: #697586;
   font-size: 12px;
   overflow-wrap: anywhere;
 }
@@ -267,8 +274,8 @@
   display: inline-block;
   padding: 5px 10px;
   border-radius: 20px;
-  background-color: #fae8ff;
-  color: #a21caf;
+  background: #fce7f6;
+  color: #9e00c7;
   font-size: 10px;
   font-weight: bold;
 }
@@ -278,17 +285,17 @@
   align-items: center;
   gap: 14px;
   padding-left: 20px;
-  border-left: 1px solid #f3eaf2;
+  border-left: 1px solid #e4e7ec;
 }
 
 .visibility-control strong {
-  color: #344356;
+  color: #344054;
   font-size: 12px;
 }
 
 .visibility-control p {
   margin: 6px 0 0;
-  color: #8793a2;
+  color: #697586;
   font-size: 11px;
 }
 
@@ -296,8 +303,8 @@
   margin: 20px 0 0;
   padding: 12px;
   border-radius: 8px;
-  background-color: #faf5fb;
-  color: #8491a2;
+  background: #fdf7fc;
+  color: #697586;
   font-size: 11px;
   line-height: 1.7;
 }
@@ -319,7 +326,7 @@
 .settings-field label {
   display: block;
   margin-bottom: 9px;
-  color: #425166;
+  color: #475467;
   font-size: 12px;
   font-weight: bold;
 }
@@ -331,24 +338,24 @@
   min-width: 0;
   height: 44px;
   padding: 0 13px;
-  border: 1px solid #e8dce8;
+  border: 1px solid #d0d5dd;
   border-radius: 8px;
   outline: none;
-  background-color: #fff;
-  color: #344356;
+  background: #ffffff;
+  color: #344054;
   font-family: inherit;
   font-size: 12px;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .settings-field input::placeholder {
-  color: #a5afbc;
+  color: #98a2b3;
 }
 
 .settings-field input:focus,
 .settings-field select:focus {
-  border-color: #c0268c;
-  box-shadow: 0 0 0 3px rgba(192, 38, 140, 0.1);
+  border-color: #e300b0;
+  box-shadow: 0 0 0 3px rgba(227, 0, 176, 0.1);
 }
 
 .form-actions {
@@ -371,45 +378,49 @@
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .settings-primary-button {
-  border: 1px solid #c0268c;
-  background-color: #c0268c;
-  color: white;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #e300b0, #9e00c7);
+  color: #ffffff;
 }
 
 .settings-primary-button:hover {
-  border-color: #86198f;
-  background-color: #86198f;
+  background: linear-gradient(135deg, #c9009c, #7e00a0);
+  box-shadow: 0 4px 12px rgba(158, 0, 199, 0.2);
 }
 
 .settings-outline-button {
   flex-shrink: 0;
-  border: 1px solid #e8dce8;
-  background-color: white;
-  color: #526277;
+  border: 1px solid #d0d5dd;
+  background: #ffffff;
+  color: #475467;
 }
 
 .settings-outline-button:hover {
-  border-color: #c0268c;
-  color: #a21caf;
+  border-color: #e300b0;
+  background: #fce7f6;
+  color: #9e00c7;
 }
 
 .settings-danger-button {
   border: 1px solid #c83f46;
-  background-color: #c83f46;
-  color: white;
+  background: #c83f46;
+  color: #ffffff;
 }
 
 .settings-danger-button:hover:not(:disabled) {
-  background-color: #a92e35;
+  background: #a92e35;
 }
 
 .settings-danger-button:disabled {
   border-color: #e7a5a8;
-  background-color: #e7a5a8;
+  background: #e7a5a8;
   cursor: not-allowed;
 }
 
@@ -424,26 +435,26 @@
 .password-requirements {
   margin: 24px 0;
   padding: 17px;
-  border: 1px solid #f3d5e8;
+  border: 1px solid #f3e8ff;
   border-radius: 10px;
-  background-color: #fdf2f8;
+  background: linear-gradient(120deg, #fce7f6, #f3e8ff);
 }
 
 .password-requirements h4 {
   margin: 0 0 12px;
-  color: #71345f;
+  color: #9e00c7;
   font-size: 13px;
 }
 
 .password-requirements p {
   margin: 8px 0;
-  color: #936783;
+  color: #697586;
   font-size: 12px;
   line-height: 1.5;
 }
 
 /* =========================
-   SWITCHES
+   TOGGLE SWITCHES
 ========================= */
 
 .switch {
@@ -456,17 +467,17 @@
 }
 
 .switch input {
+  position: absolute;
   width: 1px;
   height: 1px;
   opacity: 0;
-  position: absolute;
 }
 
 .switch-slider {
   position: absolute;
   inset: 0;
   border-radius: 30px;
-  background-color: #cbd3dd;
+  background: #cbd3dd;
   transition: background-color 0.25s;
 }
 
@@ -478,13 +489,13 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: white;
+  background: #ffffff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   transition: transform 0.25s;
 }
 
 .switch input:checked + .switch-slider {
-  background-color: #c0268c;
+  background: #9e00c7;
 }
 
 .switch input:checked + .switch-slider::before {
@@ -492,7 +503,7 @@
 }
 
 .switch input:focus-visible + .switch-slider {
-  outline: 3px solid #e9a8d4;
+  outline: 3px solid #e300b0;
   outline-offset: 3px;
 }
 
@@ -520,15 +531,18 @@
 }
 
 .purple-icon {
-  background-color: #f0eaff;
+  background: #f3e8ff;
+  color: #9e00c7;
 }
 
 .green-icon {
-  background-color: #fce7f3;
+  background: #fce7f6;
+  color: #9e00c7;
 }
 
 .blue-icon {
-  background-color: #e8f2ff;
+  background: #e8f2ff;
+  color: #2563eb;
 }
 
 .feature-description {
@@ -538,13 +552,13 @@
 
 .feature-description h3 {
   margin: 0 0 7px;
-  color: #344356;
+  color: #344054;
   font-size: 13px;
 }
 
 .feature-description p {
   margin: 0 0 9px;
-  color: #8491a2;
+  color: #697586;
   font-size: 11px;
   line-height: 1.7;
 }
@@ -558,42 +572,42 @@
 }
 
 .status-enabled {
-  color: #a21caf;
+  color: #9e00c7;
 }
 
 .status-disabled,
 .session-muted {
-  color: #8a96a6;
+  color: #98a2b3;
 }
 
 .security-note {
   margin-top: 12px;
   padding: 14px;
   border-radius: 8px;
-  background-color: #f7f0fc;
-  color: #776b98;
+  background: #f3e8ff;
+  color: #697586;
   font-size: 11px;
   line-height: 1.7;
 }
 
 .security-note strong {
-  color: #69529a;
+  color: #9e00c7;
 }
 
 /* =========================
-   SESSIONS
+   ACTIVE SESSIONS
 ========================= */
 
 .session-item + .session-item {
-  border-top: 1px solid #f3eaf2;
+  border-top: 1px solid #e4e7ec;
 }
 
 .session-current {
   flex-shrink: 0;
   padding: 6px 9px;
   border-radius: 20px;
-  background-color: #fae8ff;
-  color: #a21caf;
+  background: #fce7f6;
+  color: #9e00c7;
   font-size: 10px;
   font-weight: bold;
 }
@@ -605,8 +619,8 @@
   margin-top: 15px;
   padding: 14px;
   border-radius: 8px;
-  background-color: #f7f0fc;
-  color: #75869a;
+  background: #f3e8ff;
+  color: #697586;
   font-size: 11px;
   line-height: 1.7;
 }
@@ -620,7 +634,8 @@
 }
 
 .danger-icon {
-  background-color: #fff0f0;
+  background: #fff0f0;
+  color: #c83f46;
 }
 
 .deactivate-box {
@@ -629,13 +644,13 @@
   justify-content: space-between;
   gap: 20px;
   padding-bottom: 23px;
-  border-bottom: 1px solid #f3eaf2;
+  border-bottom: 1px solid #e4e7ec;
 }
 
 .deactivate-box h3,
 .delete-warning h3 {
   margin: 0 0 8px;
-  color: #344356;
+  color: #344054;
   font-size: 14px;
 }
 
@@ -643,7 +658,7 @@
 .delete-warning > p {
   max-width: 570px;
   margin: 0;
-  color: #8793a2;
+  color: #697586;
   font-size: 12px;
   line-height: 1.8;
 }
@@ -653,7 +668,7 @@
   padding: 20px;
   border: 1px solid #f3d9da;
   border-radius: 10px;
-  background-color: #fff8f8;
+  background: #fff8f8;
 }
 
 .delete-warning h3 {
@@ -681,9 +696,489 @@
 
 .settings-footer {
   padding: 5px 0 20px;
-  color: #9aa5b3;
+  color: #98a2b3;
   font-size: 11px;
   text-align: center;
+}
+
+/* =========================
+   SHARED FOOTER
+========================= */
+
+.account-settings-page .doctor-footer {
+  margin-top: 35px;
+  padding: 24px 10px 8px;
+  border-top: 1px solid #e4e7ec;
+  color: #667085;
+  text-align: center;
+}
+
+.account-settings-page .doctor-footer > p {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.account-settings-page .footer-heart {
+  color: #9e00c7;
+}
+
+.account-settings-page .doctor-footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+.account-settings-page .doctor-footer-links span + span::before {
+  content: "|";
+  margin-right: 10px;
+  color: #d0d5dd;
+}
+
+/* =========================================
+   DARK MODE - MAIN PAGE
+========================================= */
+
+body.dark-mode .account-settings-page {
+  background: #0f172a;
+  color: #f1f5f9;
+  color-scheme: dark;
+}
+
+/* =========================================
+   DARK MODE - PAGE HEADING
+========================================= */
+
+body.dark-mode .account-settings-page .settings-eyebrow {
+  color: #f0abfc;
+}
+
+body.dark-mode .account-settings-page .settings-heading h1 {
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .settings-heading p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .settings-heading-icon {
+  background: #4c1d95;
+  border: 1px solid #a855f7;
+  color: #f5d0fe;
+}
+
+/* =========================================
+   DARK MODE - SIDEBAR
+========================================= */
+
+body.dark-mode .account-settings-page .settings-sidebar {
+  background: #1e293b;
+  border-color: #475569;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .account-settings-page .sidebar-profile {
+  border-bottom-color: #475569;
+}
+
+body.dark-mode .account-settings-page .sidebar-profile h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .sidebar-profile p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .sidebar-label {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .settings-nav-link {
+  color: #e2e8f0;
+}
+
+body.dark-mode .account-settings-page .settings-nav-link:hover,
+body.dark-mode .account-settings-page .settings-nav-link.active {
+  background: #4c1d95;
+  color: #f5d0fe;
+}
+
+body.dark-mode .account-settings-page .settings-nav-link.danger-link:hover {
+  background: #7f1d1d;
+  color: #fecaca;
+}
+
+/* =========================================
+   DARK MODE - SIDEBAR HELP
+========================================= */
+
+body.dark-mode .account-settings-page .sidebar-help {
+  background: #334155;
+  border: 1px solid #475569;
+}
+
+body.dark-mode .account-settings-page .sidebar-help > span {
+  color: #f0abfc;
+  opacity: 1;
+  visibility: visible;
+}
+
+body.dark-mode .account-settings-page .sidebar-help h4 {
+  color: #f5d0fe;
+}
+
+body.dark-mode .account-settings-page .sidebar-help p {
+  color: #cbd5e1;
+}
+
+/* =========================================
+   DARK MODE - SETTINGS CARDS
+========================================= */
+
+body.dark-mode .account-settings-page .settings-card {
+  background: #1e293b;
+  border-color: #475569;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .account-settings-page .section-heading h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .section-heading p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .section-icon {
+  background: #4c1d95;
+  border: 1px solid #a855f7;
+  color: #f5d0fe;
+}
+
+/* =========================================
+   DARK MODE - PROFILE
+========================================= */
+
+body.dark-mode .account-settings-page .profile-photo {
+  border-color: #c084fc;
+}
+
+body.dark-mode .account-settings-page .profile-name h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .profile-name p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .patient-badge {
+  background: #4c1d95;
+  border: 1px solid #a855f7;
+  color: #f5d0fe;
+}
+
+body.dark-mode .account-settings-page .visibility-control {
+  border-color: #475569;
+}
+
+body.dark-mode .account-settings-page .visibility-control strong {
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .visibility-control p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .helper-text {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #e2e8f0;
+}
+
+/* =========================================
+   DARK MODE - FORM FIELDS
+========================================= */
+
+body.dark-mode .account-settings-page .settings-field label {
+  color: #e2e8f0;
+}
+
+body.dark-mode .account-settings-page .settings-field input,
+body.dark-mode .account-settings-page .settings-field select {
+  background: #334155;
+  border-color: #64748b;
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .settings-field input::placeholder {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .settings-field select option {
+  background: #334155;
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .settings-field input:focus,
+body.dark-mode .account-settings-page .settings-field select:focus {
+  border-color: #e879f9;
+  box-shadow: 0 0 0 3px rgba(232, 121, 249, 0.18);
+}
+
+/* =========================================
+   DARK MODE - BUTTONS
+========================================= */
+
+body.dark-mode .account-settings-page .settings-primary-button {
+  background: linear-gradient(135deg, #c026d3, #7e22ce);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .settings-primary-button:hover {
+  background: linear-gradient(135deg, #a21caf, #6b21a8);
+}
+
+body.dark-mode .account-settings-page .settings-outline-button {
+  background: #334155;
+  border-color: #a855f7;
+  color: #f5d0fe;
+}
+
+body.dark-mode .account-settings-page .settings-outline-button:hover {
+  background: #4c1d95;
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .settings-danger-button {
+  background: #b91c1c;
+  border-color: #ef4444;
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .settings-danger-button:hover:not(:disabled) {
+  background: #991b1b;
+}
+
+body.dark-mode .account-settings-page .settings-danger-button:disabled {
+  background: #7f1d1d;
+  border-color: #991b1b;
+  color: #fecaca;
+  opacity: 0.65;
+}
+
+/* =========================================
+   DARK MODE - PASSWORD REQUIREMENTS
+========================================= */
+
+body.dark-mode .account-settings-page .password-requirements {
+  background: #312044;
+  border-color: #55406f;
+}
+
+body.dark-mode .account-settings-page .password-requirements h4 {
+  color: #f5d0fe;
+}
+
+body.dark-mode .account-settings-page .password-requirements p {
+  color: #e2e8f0;
+}
+
+/* =========================================
+   DARK MODE - TOGGLE SWITCHES
+========================================= */
+
+body.dark-mode .account-settings-page .switch-slider {
+  background: #64748b;
+}
+
+body.dark-mode .account-settings-page .switch-slider::before {
+  background: #ffffff;
+}
+
+body.dark-mode .account-settings-page .switch input:checked + .switch-slider {
+  background: #c026d3;
+}
+
+body.dark-mode .account-settings-page .switch input:focus-visible + .switch-slider {
+  outline-color: #f0abfc;
+}
+
+/* =========================================
+   DARK MODE - SECURITY ICONS
+========================================= */
+
+body.dark-mode .account-settings-page .feature-icon {
+  border: 1px solid #64748b;
+  color: #f5d0fe;
+}
+
+body.dark-mode .account-settings-page .purple-icon {
+  background: #4c1d95;
+}
+
+body.dark-mode .account-settings-page .green-icon {
+  background: #14532d;
+  color: #bbf7d0;
+}
+
+body.dark-mode .account-settings-page .blue-icon {
+  background: #1e3a8a;
+  color: #bfdbfe;
+}
+
+/* =========================================
+   DARK MODE - SECURITY DETAILS
+========================================= */
+
+body.dark-mode .account-settings-page .feature-description h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .feature-description p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .status-enabled {
+  color: #f0abfc;
+}
+
+body.dark-mode .account-settings-page .status-disabled,
+body.dark-mode .account-settings-page .session-muted {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .security-note {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #e2e8f0;
+}
+
+body.dark-mode .account-settings-page .security-note strong {
+  color: #f5d0fe;
+}
+
+/* =========================================
+   DARK MODE - ACTIVE SESSIONS
+========================================= */
+
+body.dark-mode .account-settings-page .session-item + .session-item {
+  border-top-color: #475569;
+}
+
+body.dark-mode .account-settings-page .session-current {
+  background: #4c1d95;
+  border: 1px solid #a855f7;
+  color: #f5d0fe;
+}
+
+body.dark-mode .account-settings-page .session-footer {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #e2e8f0;
+}
+
+/* =========================================
+   DARK MODE - DANGER SECTION
+========================================= */
+
+body.dark-mode .account-settings-page .danger-card {
+  border-color: #991b1b;
+}
+
+body.dark-mode .account-settings-page .danger-icon {
+  background: #7f1d1d;
+  border: 1px solid #ef4444;
+  color: #fecaca;
+}
+
+body.dark-mode .account-settings-page .deactivate-box {
+  border-bottom-color: #475569;
+}
+
+body.dark-mode .account-settings-page .deactivate-box h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .account-settings-page .deactivate-box p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .delete-warning {
+  background: #3f222a;
+  border-color: #b91c1c;
+}
+
+body.dark-mode .account-settings-page .delete-warning h3 {
+  color: #fca5a5;
+}
+
+body.dark-mode .account-settings-page .delete-warning > p {
+  color: #fee2e2;
+}
+
+body.dark-mode .account-settings-page .delete-confirmation {
+  color: #fee2e2;
+}
+
+/* =========================================
+   DARK MODE - ICON VISIBILITY
+========================================= */
+
+body.dark-mode .account-settings-page .settings-heading-icon i,
+body.dark-mode .account-settings-page .section-icon i,
+body.dark-mode .account-settings-page .feature-icon i,
+body.dark-mode .account-settings-page .settings-nav-link i,
+body.dark-mode .account-settings-page .settings-heading-icon svg,
+body.dark-mode .account-settings-page .section-icon svg,
+body.dark-mode .account-settings-page .feature-icon svg,
+body.dark-mode .account-settings-page .settings-nav-link svg {
+  color: inherit;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================================
+   DARK MODE - FOOTER
+========================================= */
+
+body.dark-mode .account-settings-page .settings-footer {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .doctor-footer {
+  border-top-color: #475569;
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .footer-heart {
+  color: #f0abfc;
+}
+
+body.dark-mode .account-settings-page .doctor-footer-links {
+  color: #cbd5e1;
+}
+
+body.dark-mode .account-settings-page .doctor-footer-links span + span::before {
+  color: #64748b;
+}
+
+/* =========================================
+   KEYBOARD FOCUS
+========================================= */
+
+.account-settings-page button:focus-visible,
+.account-settings-page a:focus-visible {
+  outline: 2px solid #9e00c7;
+  outline-offset: 3px;
+}
+
+body.dark-mode .account-settings-page button:focus-visible,
+body.dark-mode .account-settings-page a:focus-visible {
+  outline-color: #e879f9;
 }
 
 /* =========================
@@ -712,8 +1207,12 @@
     width: 100%;
     justify-content: space-between;
     padding: 17px 0 0;
-    border-top: 1px solid #f3eaf2;
+    border-top: 1px solid #e4e7ec;
     border-left: none;
+  }
+
+  body.dark-mode .account-settings-page .visibility-control {
+    border-top-color: #475569;
   }
 }
 
@@ -858,50 +1357,49 @@
 }
 
 /* =========================
-   SHARED FOOTER
+   SMALL MOBILE FOOTER
 ========================= */
 
-.doctor-footer {
-  margin-top: 35px;
-  padding: 24px 10px 8px;
-  border-top: 1px solid #e4e7ec;
-  color: #667085;
-  text-align: center;
-}
-
-.doctor-footer > p {
-  margin: 0 0 12px;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.footer-heart {
-  color: #9e00c7;
-}
-
-.doctor-footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  color: #98a2b3;
-  font-size: 11px;
-}
-
-.doctor-footer-links span + span::before {
-  content: "|";
-  margin-right: 10px;
-  color: #d0d5dd;
-}
-
 @media (max-width: 420px) {
-  .doctor-footer-links {
+  .account-settings-page .doctor-footer-links {
     flex-direction: column;
     gap: 5px;
   }
 
-  .doctor-footer-links span + span::before {
+  .account-settings-page .doctor-footer-links span + span::before {
     content: "";
     margin: 0;
+  }
+}
+
+/* =========================================
+   SMOOTH DARK MODE TRANSITIONS
+========================================= */
+
+.account-settings-page,
+.account-settings-page .settings-sidebar,
+.account-settings-page .settings-card,
+.account-settings-page .settings-heading-icon,
+.account-settings-page .section-icon,
+.account-settings-page .feature-icon,
+.account-settings-page .settings-field input,
+.account-settings-page .settings-field select,
+.account-settings-page .sidebar-help,
+.account-settings-page .password-requirements,
+.account-settings-page .delete-warning {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .account-settings-page,
+  .account-settings-page * {
+    transition: none !important;
   }
 }

@@ -1,5 +1,10 @@
 
+/* ========================================
+   FIND CLINIC PAGE - MYPATIENTHUB
+======================================== */
+
 /* Main page */
+
 .find-clinic-page {
     min-height: 100vh;
     padding: 32px;
@@ -9,16 +14,21 @@
     box-sizing: border-box;
 }
 
-.find-clinic-page * {
+.find-clinic-page *,
+.find-clinic-page *::before,
+.find-clinic-page *::after {
     box-sizing: border-box;
 }
 
-/* Page heading */
-.clinic-page-header {
+/* ========================================
+   PAGE HEADING
+======================================== */
+
+.find-clinic-page .clinic-page-header {
     margin-bottom: 28px;
 }
 
-.clinic-eyebrow {
+.find-clinic-page .clinic-eyebrow {
     display: inline-block;
     margin-bottom: 10px;
     color: #e300b0;
@@ -28,21 +38,24 @@
     text-transform: uppercase;
 }
 
-.clinic-page-header h1 {
+.find-clinic-page .clinic-page-header h1 {
     margin: 0 0 12px;
     color: #9e00c7;
     font-size: 34px;
 }
 
-.clinic-page-header p {
+.find-clinic-page .clinic-page-header p {
     margin: 0;
     color: #697586;
     font-size: 15px;
     line-height: 1.7;
 }
 
-/* Search panel */
-.clinic-finder {
+/* ========================================
+   SEARCH PANEL
+======================================== */
+
+.find-clinic-page .clinic-finder {
     padding: 24px;
     margin-bottom: 26px;
     border: 1px solid #e4e7ec;
@@ -51,7 +64,7 @@
     box-shadow: 0 4px 14px rgba(52, 64, 84, 0.05);
 }
 
-.clinic-finder-heading {
+.find-clinic-page .clinic-finder-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -60,15 +73,15 @@
     margin-bottom: 18px;
 }
 
-.clinic-finder-heading h2,
-.clinic-map-heading h2,
-.clinic-list-heading h2 {
+.find-clinic-page .clinic-finder-heading h2,
+.find-clinic-page .clinic-map-heading h2,
+.find-clinic-page .clinic-list-heading h2 {
     margin: 0;
     color: #9e00c7;
     font-size: 20px;
 }
 
-.clinic-count {
+.find-clinic-page .clinic-count {
     padding: 7px 12px;
     border: 1px solid #e300b0;
     border-radius: 20px;
@@ -78,13 +91,13 @@
     font-weight: 700;
 }
 
-.clinic-search-bar {
+.find-clinic-page .clinic-search-bar {
     display: flex;
     gap: 12px;
 }
 
-.clinic-search-input,
-.clinic-city-select {
+.find-clinic-page .clinic-search-input,
+.find-clinic-page .clinic-city-select {
     min-width: 0;
     padding: 13px 14px;
     border: 1px solid #d0d5dd;
@@ -95,28 +108,28 @@
     outline: none;
 }
 
-.clinic-search-input {
+.find-clinic-page .clinic-search-input {
     flex: 1;
     width: 100%;
 }
 
-.clinic-city-select {
+.find-clinic-page .clinic-city-select {
     width: 180px;
     cursor: pointer;
 }
 
-.clinic-search-input::placeholder {
+.find-clinic-page .clinic-search-input::placeholder {
     color: #697586;
 }
 
-.clinic-search-input:focus,
-.clinic-city-select:focus {
+.find-clinic-page .clinic-search-input:focus,
+.find-clinic-page .clinic-city-select:focus {
     border-color: #e300b0;
     box-shadow: 0 0 0 3px rgba(227, 0, 176, 0.12);
 }
 
-.clinic-search-button,
-.clinic-contact-button {
+.find-clinic-page .clinic-search-button,
+.find-clinic-page .clinic-contact-button {
     padding: 13px 22px;
     border: none;
     border-radius: 8px;
@@ -128,22 +141,25 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.clinic-search-button:hover,
-.clinic-contact-button:hover {
+.find-clinic-page .clinic-search-button:hover,
+.find-clinic-page .clinic-contact-button:hover {
     transform: translateY(-1px);
     box-shadow: 0 5px 14px rgba(158, 0, 199, 0.2);
 }
 
-/* Map and clinic list */
-.clinic-map-list {
+/* ========================================
+   MAP AND CLINIC LIST
+======================================== */
+
+.find-clinic-page .clinic-map-list {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     gap: 24px;
     align-items: start;
 }
 
-.clinic-map-section,
-.clinic-list-section {
+.find-clinic-page .clinic-map-section,
+.find-clinic-page .clinic-list-section {
     min-width: 0;
     padding: 22px;
     border: 1px solid #e4e7ec;
@@ -152,8 +168,8 @@
     box-shadow: 0 4px 14px rgba(52, 64, 84, 0.05);
 }
 
-.clinic-map-heading,
-.clinic-list-heading {
+.find-clinic-page .clinic-map-heading,
+.find-clinic-page .clinic-list-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -162,7 +178,7 @@
     margin-bottom: 18px;
 }
 
-.clinic-map-badge {
+.find-clinic-page .clinic-map-badge {
     padding: 7px 12px;
     border: 1px solid #9e00c7;
     border-radius: 20px;
@@ -172,8 +188,11 @@
     font-weight: 700;
 }
 
-/* Illustrative map */
-.clinic-map {
+/* ========================================
+   ILLUSTRATIVE MAP
+======================================== */
+
+.find-clinic-page .clinic-map {
     position: relative;
     width: 100%;
     height: 390px;
@@ -183,42 +202,42 @@
     background: #f5f7fa;
 }
 
-.map-park {
+.find-clinic-page .map-park {
     position: absolute;
     border: 1px solid #e4e7ec;
     border-radius: 20px;
     background: #ffffff;
 }
 
-.map-park-one {
+.find-clinic-page .map-park-one {
     top: 9%;
     left: 7%;
     width: 26%;
     height: 24%;
 }
 
-.map-park-two {
+.find-clinic-page .map-park-two {
     right: 7%;
     bottom: 10%;
     width: 28%;
     height: 23%;
 }
 
-.map-park-three {
+.find-clinic-page .map-park-three {
     top: 42%;
     right: 14%;
     width: 20%;
     height: 17%;
 }
 
-.map-road {
+.find-clinic-page .map-road {
     position: absolute;
     z-index: 1;
     border: 1px solid #e4e7ec;
     background: #ffffff;
 }
 
-.map-road-one {
+.find-clinic-page .map-road-one {
     top: 45%;
     left: -8%;
     width: 116%;
@@ -226,7 +245,7 @@
     transform: rotate(-15deg);
 }
 
-.map-road-two {
+.find-clinic-page .map-road-two {
     top: -12%;
     left: 48%;
     width: 18px;
@@ -234,7 +253,7 @@
     transform: rotate(18deg);
 }
 
-.map-road-three {
+.find-clinic-page .map-road-three {
     top: 70%;
     left: -8%;
     width: 116%;
@@ -242,7 +261,7 @@
     transform: rotate(9deg);
 }
 
-.map-label {
+.find-clinic-page .map-label {
     position: absolute;
     z-index: 2;
     color: #697586;
@@ -250,34 +269,34 @@
     font-weight: 700;
 }
 
-.map-label-north {
+.find-clinic-page .map-label-north {
     top: 5%;
     left: 45%;
 }
 
-.map-label-kabul {
+.find-clinic-page .map-label-kabul {
     top: 28%;
     left: 34%;
     color: #9e00c7;
 }
 
-.map-label-west {
+.find-clinic-page .map-label-west {
     top: 49%;
     left: 9%;
 }
 
-.map-label-east {
+.find-clinic-page .map-label-east {
     top: 13%;
     right: 5%;
     max-width: 100px;
 }
 
-.map-label-south {
+.find-clinic-page .map-label-south {
     bottom: 8%;
     left: 36%;
 }
 
-.clinic-map-marker {
+.find-clinic-page .clinic-map-marker {
     position: absolute;
     z-index: 3;
     display: flex;
@@ -299,18 +318,18 @@
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.clinic-map-marker:hover {
+.find-clinic-page .clinic-map-marker:hover {
     background: #9e00c7;
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-.clinic-map-marker.active-marker {
+.find-clinic-page .clinic-map-marker.active-marker {
     background: #9e00c7;
     box-shadow: 0 0 0 4px rgba(158, 0, 199, 0.15);
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-.map-empty-message {
+.find-clinic-page .map-empty-message {
     position: absolute;
     z-index: 4;
     inset: 0;
@@ -324,7 +343,7 @@
     text-align: center;
 }
 
-.map-legend {
+.find-clinic-page .map-legend {
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
@@ -333,13 +352,13 @@
     font-size: 12px;
 }
 
-.map-legend span {
+.find-clinic-page .map-legend span {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.map-legend span::before {
+.find-clinic-page .map-legend span::before {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -347,19 +366,22 @@
     content: "";
 }
 
-.map-legend span:last-child::before {
+.find-clinic-page .map-legend span:last-child::before {
     background: #9e00c7;
 }
 
-.clinic-map-note {
+.find-clinic-page .clinic-map-note {
     margin: 14px 0 0;
     color: #697586;
     font-size: 12px;
     line-height: 1.6;
 }
 
-/* Clinic list */
-.clinic-reset-button {
+/* ========================================
+   CLINIC LIST
+======================================== */
+
+.find-clinic-page .clinic-reset-button {
     padding: 8px 12px;
     border: 1px solid #e300b0;
     border-radius: 7px;
@@ -370,18 +392,18 @@
     cursor: pointer;
 }
 
-.clinic-reset-button:hover {
+.find-clinic-page .clinic-reset-button:hover {
     background: #e300b0;
     color: #ffffff;
 }
 
-.clinic-list {
+.find-clinic-page .clinic-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.clinic-list-item {
+.find-clinic-page .clinic-list-item {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -396,16 +418,16 @@
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.clinic-list-item:hover {
+.find-clinic-page .clinic-list-item:hover {
     border-color: #e300b0;
 }
 
-.clinic-list-item.selected-clinic {
+.find-clinic-page .clinic-list-item.selected-clinic {
     border: 2px solid #9e00c7;
     box-shadow: 0 0 0 2px rgba(158, 0, 199, 0.07);
 }
 
-.clinic-list-icon {
+.find-clinic-page .clinic-list-icon {
     display: flex;
     flex-shrink: 0;
     align-items: center;
@@ -419,7 +441,7 @@
     font-size: 23px;
 }
 
-.clinic-list-info {
+.find-clinic-page .clinic-list-info {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -427,37 +449,37 @@
     gap: 6px;
 }
 
-.clinic-list-info strong {
+.find-clinic-page .clinic-list-info strong {
     color: #9e00c7;
     font-size: 14px;
     line-height: 1.5;
     overflow-wrap: anywhere;
 }
 
-.clinic-list-location {
+.find-clinic-page .clinic-list-location {
     color: #697586;
     font-size: 12px;
 }
 
-.clinic-list-rating {
+.find-clinic-page .clinic-list-rating {
     color: #e300b0;
     font-size: 12px;
     font-weight: 700;
 }
 
-.clinic-demo-rating {
+.find-clinic-page .clinic-demo-rating {
     color: #697586;
     font-size: 11px;
     font-weight: 400;
 }
 
-.clinic-list-arrow {
+.find-clinic-page .clinic-list-arrow {
     flex-shrink: 0;
     color: #e300b0;
     font-size: 25px;
 }
 
-.clinic-no-results {
+.find-clinic-page .clinic-no-results {
     padding: 24px 14px;
     border: 1px dashed #d0d5dd;
     border-radius: 10px;
@@ -467,8 +489,11 @@
     text-align: center;
 }
 
-/* Selected clinic details */
-.clinic-detail-panel {
+/* ========================================
+   SELECTED CLINIC DETAILS
+======================================== */
+
+.find-clinic-page .clinic-detail-panel {
     margin-top: 24px;
     padding: 26px;
     border: 1px solid #e4e7ec;
@@ -477,14 +502,14 @@
     box-shadow: 0 4px 14px rgba(52, 64, 84, 0.05);
 }
 
-.clinic-detail-header {
+.find-clinic-page .clinic-detail-header {
     display: flex;
     align-items: center;
     gap: 16px;
     margin-bottom: 24px;
 }
 
-.clinic-detail-icon {
+.find-clinic-page .clinic-detail-icon {
     display: flex;
     flex-shrink: 0;
     align-items: center;
@@ -498,7 +523,7 @@
     font-size: 29px;
 }
 
-.clinic-detail-label {
+.find-clinic-page .clinic-detail-label {
     margin: 0 0 7px;
     color: #e300b0;
     font-size: 11px;
@@ -507,7 +532,7 @@
     text-transform: uppercase;
 }
 
-.clinic-detail-header h2 {
+.find-clinic-page .clinic-detail-header h2 {
     margin: 0 0 6px;
     color: #9e00c7;
     font-size: 23px;
@@ -515,19 +540,19 @@
     overflow-wrap: anywhere;
 }
 
-.clinic-detail-subtitle {
+.find-clinic-page .clinic-detail-subtitle {
     margin: 0;
     color: #697586;
     font-size: 13px;
 }
 
-.clinic-detail-grid {
+.find-clinic-page .clinic-detail-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
 }
 
-.clinic-detail-item {
+.find-clinic-page .clinic-detail-item {
     min-width: 0;
     padding: 16px;
     border: 1px solid #e4e7ec;
@@ -535,13 +560,13 @@
     background: #ffffff;
 }
 
-.clinic-detail-item h3 {
+.find-clinic-page .clinic-detail-item h3 {
     margin: 0 0 9px;
     color: #e300b0;
     font-size: 13px;
 }
 
-.clinic-detail-item p {
+.find-clinic-page .clinic-detail-item p {
     margin: 0;
     color: #344054;
     font-size: 14px;
@@ -549,17 +574,17 @@
     overflow-wrap: anywhere;
 }
 
-.clinic-detail-services {
+.find-clinic-page .clinic-detail-services {
     grid-column: 1 / -1;
 }
 
-.clinic-service-tags {
+.find-clinic-page .clinic-service-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
 
-.clinic-service-tags span {
+.find-clinic-page .clinic-service-tags span {
     padding: 8px 11px;
     border: 1px solid #e300b0;
     border-radius: 20px;
@@ -569,18 +594,21 @@
     font-weight: 600;
 }
 
-.clinic-contact-button {
+.find-clinic-page .clinic-contact-button {
     margin-top: 22px;
 }
 
-.clinic-demo-note {
+.find-clinic-page .clinic-demo-note {
     margin: 17px 0 0;
     color: #697586;
     font-size: 12px;
     line-height: 1.7;
 }
 
-/* Contact modal */
+/* ========================================
+   CONTACT MODAL
+======================================== */
+
 .clinic-modal-overlay {
     position: fixed;
     z-index: 1000;
@@ -709,64 +737,70 @@
     background: #9e00c7;
 }
 
-/* Tablet screens */
+/* ========================================
+   TABLET RESPONSIVE DESIGN
+======================================== */
+
 @media (max-width: 900px) {
     .find-clinic-page {
         padding: 24px;
     }
 
-    .clinic-map-list {
+    .find-clinic-page .clinic-map-list {
         grid-template-columns: 1fr;
     }
 }
 
-/* Mobile screens */
+/* ========================================
+   MOBILE RESPONSIVE DESIGN
+======================================== */
+
 @media (max-width: 600px) {
     .find-clinic-page {
         padding: 16px;
     }
 
-    .clinic-page-header h1 {
+    .find-clinic-page .clinic-page-header h1 {
         font-size: 28px;
     }
 
-    .clinic-finder,
-    .clinic-map-section,
-    .clinic-list-section,
-    .clinic-detail-panel {
+    .find-clinic-page .clinic-finder,
+    .find-clinic-page .clinic-map-section,
+    .find-clinic-page .clinic-list-section,
+    .find-clinic-page .clinic-detail-panel {
         padding: 16px;
     }
 
-    .clinic-search-bar {
+    .find-clinic-page .clinic-search-bar {
         flex-direction: column;
     }
 
-    .clinic-city-select,
-    .clinic-search-button {
+    .find-clinic-page .clinic-city-select,
+    .find-clinic-page .clinic-search-button {
         width: 100%;
     }
 
-    .clinic-map {
+    .find-clinic-page .clinic-map {
         height: 310px;
     }
 
-    .clinic-detail-grid {
+    .find-clinic-page .clinic-detail-grid {
         grid-template-columns: 1fr;
     }
 
-    .clinic-detail-services {
+    .find-clinic-page .clinic-detail-services {
         grid-column: auto;
     }
 
-    .clinic-detail-header {
+    .find-clinic-page .clinic-detail-header {
         align-items: flex-start;
     }
 
-    .clinic-detail-header h2 {
+    .find-clinic-page .clinic-detail-header h2 {
         font-size: 19px;
     }
 
-    .clinic-contact-button {
+    .find-clinic-page .clinic-contact-button {
         width: 100%;
     }
 
@@ -775,8 +809,11 @@
     }
 }
 
-/* Footer */
-.doctor-footer {
+/* ========================================
+   FOOTER
+======================================== */
+
+.find-clinic-page .doctor-footer {
     margin-top: 35px;
     padding: 24px 10px 8px;
     border-top: 1px solid #e4e7ec;
@@ -784,17 +821,17 @@
     text-align: center;
 }
 
-.doctor-footer > p {
+.find-clinic-page .doctor-footer > p {
     margin: 0 0 12px;
     font-size: 12px;
     line-height: 1.8;
 }
 
-.footer-heart {
+.find-clinic-page .footer-heart {
     color: #9e00c7;
 }
 
-.doctor-footer-links {
+.find-clinic-page .doctor-footer-links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -803,21 +840,368 @@
     font-size: 11px;
 }
 
-.doctor-footer-links span + span::before {
+.find-clinic-page .doctor-footer-links span + span::before {
     content: "|";
     margin-right: 10px;
     color: #d0d5dd;
 }
 
-/* Footer on small mobile screens */
 @media (max-width: 420px) {
-    .doctor-footer-links {
+    .find-clinic-page .doctor-footer-links {
         flex-direction: column;
         gap: 5px;
     }
 
-    .doctor-footer-links span + span::before {
+    .find-clinic-page .doctor-footer-links span + span::before {
         content: "";
         margin: 0;
+    }
+}
+
+/* ========================================
+   DARK MODE - MAIN PAGE
+======================================== */
+
+body.dark-mode .find-clinic-page {
+    background: #0f172a;
+    color: #f1f5f9;
+}
+
+body.dark-mode .find-clinic-page .clinic-eyebrow {
+    color: #f9a8d4;
+}
+
+body.dark-mode .find-clinic-page .clinic-page-header h1 {
+    color: #e879f9;
+}
+
+body.dark-mode .find-clinic-page .clinic-page-header p {
+    color: #cbd5e1;
+}
+
+/* ========================================
+   DARK MODE - SEARCH PANEL
+======================================== */
+
+body.dark-mode .find-clinic-page .clinic-finder {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .find-clinic-page .clinic-finder-heading h2,
+body.dark-mode .find-clinic-page .clinic-map-heading h2,
+body.dark-mode .find-clinic-page .clinic-list-heading h2 {
+    color: #e879f9;
+}
+
+body.dark-mode .find-clinic-page .clinic-count,
+body.dark-mode .find-clinic-page .clinic-map-badge {
+    background: #581c87;
+    border-color: #a855f7;
+    color: #f5d0fe;
+}
+
+body.dark-mode .find-clinic-page .clinic-search-input,
+body.dark-mode .find-clinic-page .clinic-city-select {
+    background: #334155;
+    border-color: #475569;
+    color: #ffffff;
+    color-scheme: dark;
+}
+
+body.dark-mode .find-clinic-page .clinic-search-input::placeholder {
+    color: #cbd5e1;
+}
+
+body.dark-mode .find-clinic-page .clinic-city-select option {
+    background: #1e293b;
+    color: #ffffff;
+}
+
+body.dark-mode .find-clinic-page .clinic-search-input:focus,
+body.dark-mode .find-clinic-page .clinic-city-select:focus {
+    border-color: #c084fc;
+    box-shadow: 0 0 0 3px rgba(192, 132, 252, 0.15);
+}
+
+body.dark-mode .find-clinic-page .clinic-search-button,
+body.dark-mode .find-clinic-page .clinic-contact-button {
+    background: linear-gradient(135deg, #c026d3, #7e22ce);
+    color: #ffffff;
+}
+
+/* ========================================
+   DARK MODE - MAP AND CLINIC LIST
+======================================== */
+
+body.dark-mode .find-clinic-page .clinic-map-section,
+body.dark-mode .find-clinic-page .clinic-list-section {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Illustrative map */
+
+body.dark-mode .find-clinic-page .clinic-map {
+    background: #1e293b;
+    border-color: #475569;
+}
+
+body.dark-mode .find-clinic-page .map-park {
+    background: #334155;
+    border-color: #475569;
+}
+
+body.dark-mode .find-clinic-page .map-road {
+    background: #64748b;
+    border-color: #94a3b8;
+}
+
+body.dark-mode .find-clinic-page .map-label {
+    color: #cbd5e1;
+}
+
+body.dark-mode .find-clinic-page .map-label-kabul {
+    color: #f5d0fe;
+}
+
+body.dark-mode .find-clinic-page .clinic-map-marker {
+    background: #c026d3;
+    border-color: #f1f5f9;
+    color: #ffffff;
+}
+
+body.dark-mode .find-clinic-page .clinic-map-marker:hover,
+body.dark-mode .find-clinic-page .clinic-map-marker.active-marker {
+    background: #9333ea;
+    color: #ffffff;
+}
+
+body.dark-mode .find-clinic-page .map-empty-message {
+    background: #1e293b;
+    color: #f5d0fe;
+}
+
+body.dark-mode .find-clinic-page .map-legend,
+body.dark-mode .find-clinic-page .clinic-map-note {
+    color: #cbd5e1;
+}
+
+/* ========================================
+   DARK MODE - CLINIC LIST
+======================================== */
+
+body.dark-mode .find-clinic-page .clinic-reset-button {
+    background: #334155;
+    border-color: #a855f7;
+    color: #f5d0fe;
+}
+
+body.dark-mode .find-clinic-page .clinic-reset-button:hover {
+    background: #581c87;
+    color: #ffffff;
+}
+
+body.dark-mode .find-clinic-page .clinic-list-item {
+    background: #253247;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+body.dark-mode .find-clinic-page .clinic-list-item:hover {
+    border-color: #c084fc;
+}
+
+body.dark-mode .find-clinic-page .clinic-list-item.selected-clinic {
+    background: #334155;
+    border-color: #c084fc;
+    box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.12);
+}
+
+body.dark-mode .find-clinic-page .clinic-list-icon {
+    background: #581c87;
+    border-color: #7e22ce;
+    color: #f5d0fe;
+}
+
+body.dark-mode .find-clinic-page .clinic-list-info strong {
+    color: #f5d0fe;
+}
+
+body.dark-mode .find-clinic-page .clinic-list-location,
+body.dark-mode .find-clinic-page .clinic-demo-rating {
+    color: #cbd5e1;
+}
+
+body.dark-mode .find-clinic-page .clinic-list-rating,
+body.dark-mode .find-clinic-page .clinic-list-arrow {
+    color: #f9a8d4;
+}
+
+body.dark-mode .find-clinic-page .clinic-no-results {
+    border-color: #475569;
+    color: #cbd5e1;
+}
+
+/* ========================================
+   DARK MODE - CLINIC DETAILS
+======================================== */
+
+body.dark-mode .find-clinic-page .clinic-detail-panel {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .find-clinic-page .clinic-detail-icon {
+    background: #581c87;
+    border-color: #7e22ce;
+    color: #f5d0fe;
+}
+
+body.dark-mode .find-clinic-page .clinic-detail-label {
+    color: #f9a8d4;
+}
+
+body.dark-mode .find-clinic-page .clinic-detail-header h2 {
+    color: #f5d0fe;
+}
+
+body.dark-mode .find-clinic-page .clinic-detail-subtitle {
+    color: #cbd5e1;
+}
+
+body.dark-mode .find-clinic-page .clinic-detail-item {
+    background: #253247;
+    border-color: #475569;
+}
+
+body.dark-mode .find-clinic-page .clinic-detail-item h3 {
+    color: #f9a8d4;
+}
+
+body.dark-mode .find-clinic-page .clinic-detail-item p {
+    color: #f1f5f9;
+}
+
+body.dark-mode .find-clinic-page .clinic-service-tags span {
+    background: #581c87;
+    border-color: #7e22ce;
+    color: #f5d0fe;
+}
+
+body.dark-mode .find-clinic-page .clinic-demo-note {
+    color: #cbd5e1;
+}
+
+/* ========================================
+   DARK MODE - CONTACT MODAL
+======================================== */
+
+body.dark-mode .clinic-modal-overlay {
+    background: rgba(2, 6, 23, 0.8);
+}
+
+body.dark-mode .clinic-contact-modal {
+    background: #1e293b;
+    border-color: #475569;
+    color: #f1f5f9;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-mode .clinic-modal-close {
+    background: #334155;
+    border-color: #a855f7;
+    color: #f5d0fe;
+}
+
+body.dark-mode .clinic-modal-close:hover {
+    background: #581c87;
+    color: #ffffff;
+}
+
+body.dark-mode .clinic-modal-icon {
+    background: #581c87;
+    border-color: #7e22ce;
+    color: #f5d0fe;
+}
+
+body.dark-mode .clinic-modal-subtitle {
+    color: #f9a8d4;
+}
+
+body.dark-mode .clinic-modal-clinic-name {
+    color: #f5d0fe;
+}
+
+body.dark-mode .clinic-modal-row {
+    background: #253247;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+body.dark-mode .clinic-modal-note {
+    color: #cbd5e1;
+}
+
+body.dark-mode .clinic-modal-cancel-button {
+    background: linear-gradient(135deg, #c026d3, #7e22ce);
+    color: #ffffff;
+}
+
+/* ========================================
+   DARK MODE - FOOTER
+======================================== */
+
+body.dark-mode .find-clinic-page .doctor-footer {
+    border-top-color: #334155;
+    color: #cbd5e1;
+}
+
+body.dark-mode .find-clinic-page .doctor-footer-links {
+    color: #94a3b8;
+}
+
+body.dark-mode .find-clinic-page .footer-heart {
+    color: #f9a8d4;
+}
+
+body.dark-mode .find-clinic-page .doctor-footer-links span + span::before {
+    color: #64748b;
+}
+
+/* ========================================
+   SMOOTH THEME TRANSITIONS
+======================================== */
+
+.find-clinic-page,
+.find-clinic-page .clinic-finder,
+.find-clinic-page .clinic-map-section,
+.find-clinic-page .clinic-list-section,
+.find-clinic-page .clinic-map,
+.find-clinic-page .clinic-list-item,
+.find-clinic-page .clinic-detail-panel,
+.find-clinic-page .clinic-detail-item,
+.clinic-contact-modal,
+.clinic-modal-row {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .find-clinic-page *,
+    .find-clinic-page *::before,
+    .find-clinic-page *::after,
+    .clinic-contact-modal,
+    .clinic-modal-row {
+        transition: none !important;
+        animation: none !important;
     }
 }

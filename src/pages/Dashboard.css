@@ -1,4 +1,7 @@
-/* MAIN DASHBOARD */
+
+/* =========================
+   MAIN DASHBOARD
+========================= */
 
 .dashboard-page {
     width: 100%;
@@ -21,9 +24,12 @@
 
 .dashboard-page button {
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* WELCOME SECTION */
+/* =========================
+   WELCOME SECTION
+========================= */
 
 .dashboard-welcome {
     display: flex;
@@ -60,11 +66,9 @@
     line-height: 1.7;
 }
 
-/* GENERAL BUTTONS */
-
-.dashboard-page button {
-    transition: all 0.3s ease;
-}
+/* =========================
+   GENERAL BUTTONS
+========================= */
 
 .primary-button {
     display: inline-flex;
@@ -105,7 +109,9 @@
     color: #e300b0;
 }
 
-/* QUICK STATISTICS */
+/* =========================
+   QUICK STATISTICS
+========================= */
 
 .quick-stats {
     display: grid;
@@ -184,7 +190,9 @@
     font-weight: bold;
 }
 
-/* SECTION HEADINGS */
+/* =========================
+   SECTION HEADINGS
+========================= */
 
 .dashboard-section {
     margin-bottom: 30px;
@@ -211,7 +219,9 @@
     line-height: 1.6;
 }
 
-/* DASHBOARD CARDS */
+/* =========================
+   DASHBOARD CARDS
+========================= */
 
 .dashboard-cards {
     display: grid;
@@ -253,7 +263,9 @@
     line-height: 1.6;
 }
 
-/* PROMOTION CARDS */
+/* =========================
+   PROMOTION CARDS
+========================= */
 
 .promotion-card {
     display: flex;
@@ -293,7 +305,9 @@
     color: #dc8a36;
 }
 
-/* PROMOTION CHARTS */
+/* =========================
+   PROMOTION CHARTS
+========================= */
 
 .dashboard-chart {
     position: relative;
@@ -362,7 +376,9 @@
     );
 }
 
-/* PROMOTION LISTS */
+/* =========================
+   PROMOTION LISTS
+========================= */
 
 .promotion-list {
     width: 100%;
@@ -409,7 +425,9 @@
     margin-top: auto;
 }
 
-/* DOCTOR DIRECTORY */
+/* =========================
+   DOCTOR DIRECTORY
+========================= */
 
 .doctor-grid {
     display: grid;
@@ -515,7 +533,9 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* HEALTH INDEX AND REMINDERS */
+/* =========================
+   HEALTH INDEX AND REMINDERS
+========================= */
 
 .dashboard-lower-grid {
     display: grid;
@@ -662,7 +682,9 @@
     line-height: 1.5;
 }
 
-/* UPCOMING APPOINTMENTS */
+/* =========================
+   UPCOMING APPOINTMENTS
+========================= */
 
 .dashboard-appointments {
     margin-bottom: 25px;
@@ -782,7 +804,9 @@
     color: #b87527;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .doctor-footer {
     margin-top: 35px;
@@ -817,7 +841,9 @@
     color: #d0d5dd;
 }
 
-/* POP-UP WINDOWS */
+/* =========================
+   POP-UP WINDOWS
+========================= */
 
 .modal-overlay {
     position: fixed;
@@ -1050,7 +1076,9 @@
     color: #16834a !important;
 }
 
-/* TABLET */
+/* =========================
+   TABLET RESPONSIVE DESIGN
+========================= */
 
 @media (max-width: 1200px) {
     .dashboard-page {
@@ -1070,7 +1098,9 @@
     }
 }
 
-/* SMALL SCREENS */
+/* =========================
+   SMALL SCREENS
+========================= */
 
 @media (max-width: 800px) {
     .dashboard-lower-grid {
@@ -1086,7 +1116,9 @@
     }
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE RESPONSIVE DESIGN
+========================= */
 
 @media (max-width: 650px) {
     .dashboard-page {
@@ -1167,4 +1199,402 @@
         font-size: 11px;
         text-align: right;
     }
+}
+
+/* =========================
+   DARK MODE - DASHBOARD
+========================= */
+
+body.dark-mode .dashboard-page {
+    background: #0f172a;
+    color: #f1f5f9;
+}
+
+/* Welcome section */
+
+body.dark-mode .dashboard-welcome {
+    background: linear-gradient(135deg, #b00092, #6d28d9);
+}
+
+body.dark-mode .dashboard-welcome h1,
+body.dark-mode .dashboard-welcome p,
+body.dark-mode .dashboard-welcome .welcome-label {
+    color: #ffffff;
+}
+
+/* Dashboard card backgrounds */
+
+body.dark-mode .dashboard-page .stat-card,
+body.dark-mode .dashboard-page .dashboard-card,
+body.dark-mode .dashboard-page .doctor-card,
+body.dark-mode .dashboard-page .dashboard-appointments {
+    background: #1e293b;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings and main numbers */
+
+body.dark-mode .dashboard-page .stat-card h2,
+body.dark-mode .dashboard-page .stat-card strong,
+body.dark-mode .dashboard-page .section-heading h2,
+body.dark-mode .dashboard-page .dashboard-card h3,
+body.dark-mode .dashboard-page .doctor-card h3,
+body.dark-mode .dashboard-page .reminder-item b,
+body.dark-mode .dashboard-page .appointments-heading h2,
+body.dark-mode .dashboard-page .appointment-doctor-info b {
+    color: #ffffff;
+}
+
+/* Secondary text */
+
+body.dark-mode .dashboard-page .stat-card p,
+body.dark-mode .dashboard-page .stat-card small,
+body.dark-mode .dashboard-page .section-heading p,
+body.dark-mode .dashboard-page .card-description,
+body.dark-mode .dashboard-page .doctor-card > p,
+body.dark-mode .dashboard-page .doctor-time,
+body.dark-mode .dashboard-page .health-score-info p,
+body.dark-mode .dashboard-page .reminder-item p,
+body.dark-mode .dashboard-page .appointments-heading p,
+body.dark-mode .dashboard-page .appointment-doctor-info small,
+body.dark-mode .dashboard-page .appointment-date {
+    color: #cbd5e1;
+}
+
+body.dark-mode .dashboard-page .health-score-info small {
+    color: #94a3b8;
+}
+
+/* Positive statistics */
+
+body.dark-mode .dashboard-page .positive-text {
+    color: #86efac !important;
+}
+
+/* =========================
+   DARK MODE - STATISTICS ICONS
+========================= */
+
+body.dark-mode .dashboard-page .stat-blue,
+body.dark-mode .dashboard-page .market-icon,
+body.dark-mode .dashboard-page .reminder-blue {
+    background: #1e3a8a;
+    color: #93c5fd;
+}
+
+body.dark-mode .dashboard-page .stat-green,
+body.dark-mode .dashboard-page .pharmacy-icon,
+body.dark-mode .dashboard-page .reminder-green {
+    background: #14532d;
+    color: #86efac;
+}
+
+body.dark-mode .dashboard-page .stat-purple,
+body.dark-mode .dashboard-page .clinic-icon,
+body.dark-mode .dashboard-page .doctor-purple {
+    background: #581c87;
+    color: #e9d5ff;
+}
+
+body.dark-mode .dashboard-page .stat-orange,
+body.dark-mode .dashboard-page .doctor-promotion-icon,
+body.dark-mode .dashboard-page .doctor-orange {
+    background: #78350f;
+    color: #fed7aa;
+}
+
+/* Doctor avatar */
+
+body.dark-mode .dashboard-page .doctor-green {
+    background: #14532d;
+    color: #86efac;
+}
+
+/* Section heading icons */
+
+body.dark-mode .dashboard-page .health-heading-icon,
+body.dark-mode .dashboard-page .reminder-heading-icon {
+    color: #e9a8ff;
+}
+
+body.dark-mode .dashboard-page .dashboard-card h3 i {
+    color: #c4b5fd;
+}
+
+/* =========================
+   DARK MODE - CHARTS
+========================= */
+
+body.dark-mode .dashboard-page .dashboard-chart::before,
+body.dark-mode .dashboard-page .health-progress-inner {
+    background: #1e293b;
+}
+
+body.dark-mode .dashboard-page .dashboard-chart span,
+body.dark-mode .dashboard-page .health-progress-inner strong {
+    color: #ffffff;
+}
+
+body.dark-mode .dashboard-page .health-progress-inner span {
+    color: #cbd5e1;
+}
+
+body.dark-mode .dashboard-page .health-score-info > span {
+    color: #ffffff;
+}
+
+/* =========================
+   DARK MODE - PROMOTION LISTS
+========================= */
+
+body.dark-mode .dashboard-page .promotion-list li {
+    border-bottom-color: #334155;
+    color: #cbd5e1;
+}
+
+body.dark-mode .dashboard-page .promotion-list li:hover {
+    color: #f9a8d4;
+}
+
+body.dark-mode .dashboard-page .promotion-list b {
+    background: #581c87;
+    color: #f5d0fe;
+}
+
+body.dark-mode .dashboard-page .promotion-list li:hover b {
+    background: #9b00c7;
+    color: #ffffff;
+}
+
+/* =========================
+   DARK MODE - DOCTOR CARDS
+========================= */
+
+body.dark-mode .dashboard-page .doctor-card {
+    border-color: #334155;
+}
+
+body.dark-mode .dashboard-page .doctor-card:hover {
+    border-color: #a855f7;
+}
+
+body.dark-mode .dashboard-page .availability-label {
+    background: #14532d;
+    color: #bbf7d0;
+}
+
+/* =========================
+   DARK MODE - HEALTH TIP
+========================= */
+
+body.dark-mode .dashboard-page .health-tip {
+    background: #30243f;
+    border-color: #59406a;
+    color: #f9a8d4;
+}
+
+body.dark-mode .dashboard-page .health-tip p {
+    color: #e2e8f0;
+}
+
+body.dark-mode .dashboard-page .health-tip b {
+    color: #f9a8d4;
+}
+
+/* =========================
+   DARK MODE - REMINDERS
+========================= */
+
+body.dark-mode .dashboard-page .reminder-item {
+    border-bottom-color: #334155;
+}
+
+/* =========================
+   DARK MODE - APPOINTMENTS
+========================= */
+
+body.dark-mode .dashboard-page .appointment-row {
+    border-top-color: #334155;
+}
+
+body.dark-mode .dashboard-page .appointment-doctor-icon {
+    background: #581c87;
+    color: #e9d5ff;
+}
+
+/* Appointment status labels */
+
+body.dark-mode .dashboard-page .status-confirmed {
+    background: #14532d;
+    color: #bbf7d0;
+}
+
+body.dark-mode .dashboard-page .status-upcoming {
+    background: #473052;
+    color: #f9a8d4;
+}
+
+body.dark-mode .dashboard-page .status-pending {
+    background: #78350f;
+    color: #fde68a;
+}
+
+/* =========================
+   DARK MODE - BUTTONS
+========================= */
+
+body.dark-mode .dashboard-page .text-button,
+body.dark-mode .dashboard-page .details-button,
+body.dark-mode .dashboard-page .view-all-button {
+    color: #f9a8d4;
+}
+
+body.dark-mode .dashboard-page .text-button:hover,
+body.dark-mode .dashboard-page .details-button:hover,
+body.dark-mode .dashboard-page .view-all-button:hover {
+    color: #ffffff;
+}
+
+/* Keep buttons with colored backgrounds readable */
+
+body.dark-mode .dashboard-page .doctor-book-button {
+    color: #ffffff;
+}
+
+body.dark-mode .dashboard-page .primary-button {
+    background: #ffffff;
+    color: #9b00c7;
+}
+
+/* =========================
+   DARK MODE - FOOTER
+========================= */
+
+body.dark-mode .dashboard-page .doctor-footer {
+    border-top-color: #334155;
+    color: #94a3b8;
+}
+
+body.dark-mode .dashboard-page .doctor-footer-links {
+    color: #94a3b8;
+}
+
+body.dark-mode .dashboard-page .footer-heart {
+    color: #f9a8d4;
+}
+
+/* =========================
+   DARK MODE - POP-UP WINDOWS
+========================= */
+
+body.dark-mode .dashboard-modal {
+    background: #1e293b;
+    color: #f1f5f9;
+}
+
+body.dark-mode .dashboard-modal h2,
+body.dark-mode .dashboard-modal .modal-appointment b {
+    color: #ffffff;
+}
+
+body.dark-mode .dashboard-modal > p,
+body.dark-mode .dashboard-modal .modal-detail-list li,
+body.dark-mode .dashboard-modal .demo-note,
+body.dark-mode .dashboard-modal .modal-appointment small,
+body.dark-mode .dashboard-modal .modal-appointment > span:not(.appointment-status) {
+    color: #cbd5e1;
+}
+
+/* Modal icons */
+
+body.dark-mode .dashboard-modal .modal-icon {
+    background: #581c87;
+    color: #e9d5ff;
+}
+
+body.dark-mode .dashboard-modal .modal-detail-list i {
+    color: #86efac;
+}
+
+/* Modal appointments */
+
+body.dark-mode .dashboard-modal .modal-appointment {
+    background: #253247;
+    border-color: #334155;
+}
+
+/* Modal search */
+
+body.dark-mode .dashboard-modal .doctor-search {
+    background: #334155;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+body.dark-mode .dashboard-modal .doctor-search::placeholder {
+    color: #94a3b8;
+}
+
+/* Modal doctor selection */
+
+body.dark-mode .dashboard-modal .modal-doctor-option {
+    background: #253247;
+    border-color: #334155;
+    color: #f1f5f9;
+}
+
+body.dark-mode .dashboard-modal .modal-doctor-option:hover,
+body.dark-mode .dashboard-modal .modal-doctor-option.selected {
+    background: #473052;
+    border-color: #a855f7;
+}
+
+body.dark-mode .dashboard-modal .modal-doctor-option small,
+body.dark-mode .dashboard-modal .no-doctors {
+    color: #cbd5e1;
+}
+
+body.dark-mode .dashboard-modal .modal-doctor-option > i {
+    color: #e9a8ff;
+}
+
+/* Booking confirmation */
+
+body.dark-mode .dashboard-modal .booking-message {
+    background: #14532d;
+    border-color: #166534;
+    color: #bbf7d0 !important;
+}
+
+/* Modal buttons */
+
+body.dark-mode .dashboard-modal .modal-primary-button {
+    color: #ffffff;
+}
+
+/* Modal close button */
+
+body.dark-mode .dashboard-modal .modal-close {
+    background: #334155;
+    color: #f1f5f9;
+}
+
+body.dark-mode .dashboard-modal .modal-close:hover {
+    background: #9b00c7;
+    color: #ffffff;
+}
+
+/* =========================
+   SMOOTH THEME TRANSITIONS
+========================= */
+
+.dashboard-page,
+.dashboard-page .stat-card,
+.dashboard-page .dashboard-card,
+.dashboard-page .doctor-card,
+.dashboard-page .dashboard-appointments,
+.dashboard-modal {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
 }

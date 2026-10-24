@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import "./Dashboard.css";
 
 const doctors = [
@@ -93,6 +94,77 @@ const promotionDetails = {
     },
 };
 
+// Reusable doughnut chart component
+function DonutChart({
+    percent,
+    data,
+    size = 125,
+    innerRadius = 41,
+    outerRadius = 62,
+    centerLabel = "",
+}) {
+    return (
+        <div
+            className="recharts-donut-chart"
+            style={{
+                width: size,
+                height: size,
+                flexShrink: 0,
+                margin: centerLabel ? "0" : "22px auto",
+            }}
+        >
+            <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                    <Pie
+                        data={data}
+                        dataKey="value"
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={innerRadius}
+                        outerRadius={outerRadius}
+                        startAngle={90}
+                        endAngle={-270}
+                        stroke="none"
+                        isAnimationActive={false}
+                    >
+                        {data.map((item, index) => (
+                            <Cell
+                                key={item.name || index}
+                                fill={item.color}
+                            />
+                        ))}
+                    </Pie>
+
+                    <text
+                        x="50%"
+                        y={centerLabel ? "46%" : "50%"}
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        fill="#344054"
+                        fontSize={20}
+                        fontWeight="bold"
+                    >
+                        {percent}%
+                    </text>
+
+                    {centerLabel && (
+                        <text
+                            x="50%"
+                            y="59%"
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                            fill="#667085"
+                            fontSize={10}
+                        >
+                            {centerLabel}
+                        </text>
+                    )}
+                </PieChart>
+            </ResponsiveContainer>
+        </div>
+    );
+}
+
 function Dashboard() {
     const [activeModal, setActiveModal] = useState("");
     const [searchText, setSearchText] = useState("");
@@ -117,19 +189,20 @@ function Dashboard() {
         setBookingMessage("");
     }
 
-    function confirmDemoBooking() {
+    function confirmBooking() {
         if (!selectedDoctor) {
             setBookingMessage("Please choose a doctor first.");
             return;
         }
 
         setBookingMessage(
-            `Demo request created for ${selectedDoctor}. No real appointment has been booked.`
+            `Request sent for ${selectedDoctor}.`
         );
     }
 
     return (
         <div className="dashboard-page">
+            {/* Welcome section */}
             <section className="dashboard-welcome">
                 <div>
                     <span className="welcome-label">
@@ -149,6 +222,7 @@ function Dashboard() {
                 </button>
             </section>
 
+            {/* Quick statistics */}
             <section className="quick-stats">
                 <article className="stat-card">
                     <div className="stat-icon stat-blue">
@@ -192,11 +266,12 @@ function Dashboard() {
                     <div>
                         <p>Health Reminders</p>
                         <h2>2</h2>
-                        <small>Demo reminders</small>
+                        <small>Reminders</small>
                     </div>
                 </article>
             </section>
 
+            {/* Promotion charts */}
             <section className="dashboard-section">
                 <div className="section-heading">
                     <div>
@@ -208,18 +283,27 @@ function Dashboard() {
                 </div>
 
                 <div className="dashboard-cards">
+                    {/* Clinic chart */}
                     <article className="dashboard-card promotion-card">
                         <div className="card-heading-icon clinic-icon">
                             <i className="fa-solid fa-hospital"></i>
                         </div>
+
                         <h3>Promotion by Clinics</h3>
                         <p className="card-description">
                             Check out offers from clinics near you.
                         </p>
 
-                        <div className="dashboard-chart clinic-chart">
-                            <span>56%</span>
-                        </div>
+                        <DonutChart
+                            percent={56}
+                            data={[
+                                { name: "Pink", value: 30, color: "#ec008c" },
+                                { name: "Purple", value: 18, color: "#9e00c7" },
+                                { name: "Blue", value: 17, color: "#2855e8" },
+                                { name: "Green", value: 17, color: "#16b849" },
+                                { name: "Remaining", value: 18, color: "#e6e9ee" },
+                            ]}
+                        />
 
                         <ul className="promotion-list">
                             <li>Klinik Lee Healthcare <b>19%</b></li>
@@ -237,18 +321,27 @@ function Dashboard() {
                         </button>
                     </article>
 
+                    {/* Pharmacy chart */}
                     <article className="dashboard-card promotion-card">
                         <div className="card-heading-icon pharmacy-icon">
                             <i className="fa-solid fa-prescription-bottle-medical"></i>
                         </div>
+
                         <h3>Promotion by Pharmacies</h3>
                         <p className="card-description">
                             Discover sample pharmacy promotions.
                         </p>
 
-                        <div className="dashboard-chart pharmacy-chart">
-                            <span>55%</span>
-                        </div>
+                        <DonutChart
+                            percent={55}
+                            data={[
+                                { name: "Blue", value: 25, color: "#2855e8" },
+                                { name: "Pink", value: 20, color: "#ec008c" },
+                                { name: "Green", value: 20, color: "#16b849" },
+                                { name: "Light blue", value: 17, color: "#a9bada" },
+                                { name: "Remaining", value: 18, color: "#e6e9ee" },
+                            ]}
+                        />
 
                         <ul className="promotion-list">
                             <li>Alpro Pharmacy Nilai <b>15%</b></li>
@@ -266,18 +359,27 @@ function Dashboard() {
                         </button>
                     </article>
 
+                    {/* Marketplace chart */}
                     <article className="dashboard-card promotion-card">
                         <div className="card-heading-icon market-icon">
                             <i className="fa-solid fa-bag-shopping"></i>
                         </div>
+
                         <h3>Smart Market Usage</h3>
                         <p className="card-description">
                             See how sample marketplace apps are used.
                         </p>
 
-                        <div className="dashboard-chart market-chart">
-                            <span>58%</span>
-                        </div>
+                        <DonutChart
+                            percent={58}
+                            data={[
+                                { name: "Navy", value: 25, color: "#303867" },
+                                { name: "Blue", value: 20, color: "#2c58e7" },
+                                { name: "Green", value: 20, color: "#16b849" },
+                                { name: "Pink", value: 17, color: "#e5009b" },
+                                { name: "Remaining", value: 18, color: "#e6e9ee" },
+                            ]}
+                        />
 
                         <ul className="promotion-list">
                             <li>Food Panda <b>25%</b></li>
@@ -295,18 +397,25 @@ function Dashboard() {
                         </button>
                     </article>
 
+                    {/* Doctor promotion chart */}
                     <article className="dashboard-card promotion-card">
                         <div className="card-heading-icon doctor-promotion-icon">
                             <i className="fa-solid fa-user-doctor"></i>
                         </div>
+
                         <h3>Doctor Promotions</h3>
                         <p className="card-description">
                             Explore sample offers from healthcare professionals.
                         </p>
 
-                        <div className="dashboard-chart doctor-promotion-chart">
-                            <span>60%</span>
-                        </div>
+                        <DonutChart
+                            percent={60}
+                            data={[
+                                { name: "Orange", value: 30, color: "#dc8a36" },
+                                { name: "Purple", value: 30, color: "#9e00c7" },
+                                { name: "Remaining", value: 40, color: "#f3e8ff" },
+                            ]}
+                        />
 
                         <ul className="promotion-list">
                             <li>Dr Afiah <b>10%</b></li>
@@ -326,6 +435,7 @@ function Dashboard() {
                 </div>
             </section>
 
+            {/* Find doctors section */}
             <section className="dashboard-section">
                 <div className="section-heading">
                     <div>
@@ -351,7 +461,7 @@ function Dashboard() {
                             </div>
 
                             <span className="availability-label">
-                                <span></span> Demo availability
+                                <span></span> Availability
                             </span>
 
                             <h3>{doctor.name}</h3>
@@ -374,6 +484,7 @@ function Dashboard() {
                 </div>
             </section>
 
+            {/* Health index and reminders */}
             <section className="dashboard-lower-grid">
                 <article className="dashboard-card health-card">
                     <div className="section-heading">
@@ -385,11 +496,22 @@ function Dashboard() {
                     </div>
 
                     <div className="health-score">
-                        <div className="health-progress">
-                            <div className="health-progress-inner">
-                                <strong>70%</strong>
-                                <span>Health Index</span>
-                            </div>
+                        <div
+                            className="health-progress"
+                            style={{ background: "none" }}
+                        >
+                            <DonutChart
+                                percent={70}
+                                size={140}
+                                innerRadius={47}
+                                outerRadius={68}
+                                centerLabel="Health Index"
+                                data={[
+                                    { name: "Pink", value: 35, color: "#ec008c" },
+                                    { name: "Purple", value: 35, color: "#9e00c7" },
+                                    { name: "Remaining", value: 30, color: "#e6e9ee" },
+                                ]}
+                            />
                         </div>
 
                         <div className="health-score-info">
@@ -399,7 +521,7 @@ function Dashboard() {
                             </span>
                             <p>Sample change</p>
                             <small>
-                                This is a demo indicator, not a medical assessment.
+                                This is an indicator, not a medical assessment.
                             </small>
                         </div>
                     </div>
@@ -446,6 +568,7 @@ function Dashboard() {
                 </article>
             </section>
 
+            {/* Upcoming appointments */}
             <section className="dashboard-card dashboard-appointments">
                 <div className="section-heading">
                     <div>
@@ -497,6 +620,7 @@ function Dashboard() {
                 </div>
             </section>
 
+            {/* Footer */}
             <footer className="doctor-footer">
                 <p>
                     © 2026 MyPatientHUB. Made with{" "}
@@ -506,10 +630,11 @@ function Dashboard() {
 
                 <div className="doctor-footer-links">
                     <span>MyPatientHUB</span>
-                    <span>Healthcare Directory Demo</span>
+                    <span>Healthcare Directory</span>
                 </div>
             </footer>
 
+            {/* Modals */}
             {activeModal && (
                 <div className="modal-overlay" onClick={closeModal}>
                     <section
@@ -528,6 +653,7 @@ function Dashboard() {
                             <i className="fa-solid fa-xmark"></i>
                         </button>
 
+                        {/* Promotion details modal */}
                         {promotionDetails[activeModal] && (
                             <>
                                 <div className="modal-icon">
@@ -557,6 +683,7 @@ function Dashboard() {
                             </>
                         )}
 
+                        {/* Appointments modal */}
                         {activeModal === "appointments" && (
                             <>
                                 <div className="modal-icon">
@@ -598,6 +725,7 @@ function Dashboard() {
                             </>
                         )}
 
+                        {/* Booking modal */}
                         {activeModal === "booking" && (
                             <>
                                 <div className="modal-icon">
@@ -656,9 +784,9 @@ function Dashboard() {
                                 <button
                                     className="primary-button modal-primary-button"
                                     type="button"
-                                    onClick={confirmDemoBooking}
+                                    onClick={confirmBooking}
                                 >
-                                    Request Demo Appointment
+                                    Request Appointment
                                 </button>
 
                                 {bookingMessage && (
@@ -668,7 +796,7 @@ function Dashboard() {
                                 )}
 
                                 <small className="demo-note">
-                                    Demo only. This does not contact a doctor
+                                    This does not contact a doctor
                                     or create a real booking.
                                 </small>
                             </>

@@ -10,7 +10,7 @@ function Account() {
 
     const [billing, setBilling] = useState({
         name: "Husna Qadeer",
-        email: "husna@example.com",
+        email: "Name@example.com",
         phone: "",
         address: "",
         city: "",
