@@ -1,11 +1,10 @@
-
 import { useState, useEffect } from "react";
 import {
-    BrowserRouter,
-    Navigate,
-    Route,
-    Routes,
-    Outlet,
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  Outlet,
 } from "react-router-dom";
 
 import ForgotPassword from "./ForgotPassword";
@@ -27,133 +26,94 @@ import Account from "./pages/Account";
 import AccountSettings from "./pages/AccountSettings";
 
 function DashboardLayout() {
-    const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
-    const [isDarkMode, setIsDarkMode] = useState(() => {
-        return localStorage.getItem("theme") === "dark";
-    });
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
-    function toggleSidebar() {
-        setSidebarOpen((previousState) => !previousState);
+  function toggleSidebar() {
+    setSidebarOpen((previousState) => !previousState);
+  }
+
+  function toggleTheme() {
+    setIsDarkMode((previousState) => !previousState);
+  }
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
     }
 
-    function toggleTheme() {
-        setIsDarkMode((previousState) => !previousState);
-    }
+    return () => {
+      document.body.classList.remove("dark-mode");
+    };
+  }, [isDarkMode]);
 
-    useEffect(() => {
-        if (isDarkMode) {
-            document.body.classList.add("dark-mode");
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.body.classList.remove("dark-mode");
-            localStorage.setItem("theme", "light");
-        }
+  return (
+    <div
+      className={`app-layout ${
+        sidebarOpen ? "sidebar-open" : "sidebar-closed"
+      }`}
+    >
+      <Sidebar sidebarOpen={sidebarOpen} />
 
-        return () => {
-            document.body.classList.remove("dark-mode");
-        };
-    }, [isDarkMode]);
+      <div className="main-area">
+        <Header
+          toggleSidebar={toggleSidebar}
+          isDarkMode={isDarkMode}
+          toggleTheme={toggleTheme}
+        />
 
-    return (
-        <div
-            className={`app-layout ${
-                sidebarOpen ? "sidebar-open" : "sidebar-closed"
-            }`}
-        >
-            <Sidebar sidebarOpen={sidebarOpen} />
-
-            <div className="main-area">
-                <Header
-                    toggleSidebar={toggleSidebar}
-                    isDarkMode={isDarkMode}
-                    toggleTheme={toggleTheme}
-                />
-
-                <main className="page-content">
-                    <Outlet />
-                </main>
-            </div>
-        </div>
-    );
+        <main className="page-content">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
 }
 
 function App() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route
-                    path="/"
-                    element={<Navigate to="/login" replace />}
-                />
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
 
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
 
-                <Route
-                    path="/forgot-password"
-                    element={<ForgotPassword />}
-                />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
 
-                <Route element={<DashboardLayout />}>
-                    <Route
-                        path="/dashboard"
-                        element={<Dashboard />}
-                    />
+        <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
 
-                    <Route
-                        path="/appointments"
-                        element={<Appointments />}
-                    />
+          <Route path="/appointments" element={<Appointments />} />
 
-                    <Route
-                        path="/find-doctor"
-                        element={<FindDoctor />}
-                    />
+          <Route path="/find-doctor" element={<FindDoctor />} />
 
-                    <Route
-                        path="/find-clinic"
-                        element={<FindClinic />}
-                    />
+          <Route path="/find-clinic" element={<FindClinic />} />
 
-                    <Route
-                        path="/find-pharmacy"
-                        element={<FindPharmacy />}
-                    />
+          <Route path="/find-pharmacy" element={<FindPharmacy />} />
 
-                    <Route
-                        path="/find-marketplace"
-                        element={<FindMarketPlace />}
-                    />
+          <Route path="/find-marketplace" element={<FindMarketPlace />} />
 
-                    <Route
-                        path="/dependents"
-                        element={<Dependents />}
-                    />
+          <Route path="/dependents" element={<Dependents />} />
 
-                    <Route
-                        path="/chat"
-                        element={<Chat />}
-                    />
+          <Route path="/chat" element={<Chat />} />
 
-                    <Route
-                        path="/account"
-                        element={<Account />}
-                    />
+          <Route path="/account" element={<Account />} />
 
-                    <Route
-                        path="settings"
-                        element={<AccountSettings />}
-                    />
-                </Route>
+          <Route path="settings" element={<AccountSettings />} />
+        </Route>
 
-                <Route
-                    path="*"
-                    element={<Navigate to="/login" replace />}
-                />
-            </Routes>
-        </BrowserRouter>
-    );
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

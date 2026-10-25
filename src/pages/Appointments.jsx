@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import "./Appointments.css";
 
@@ -87,14 +86,11 @@ function getInitialAppointments() {
 function formatDate(dateString) {
   if (!dateString) return "";
 
-  return new Date(`${dateString}T12:00:00`).toLocaleDateString(
-    "en-GB",
-    {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    }
-  );
+  return new Date(`${dateString}T12:00:00`).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
 }
 
 function formatTime(timeString) {
@@ -111,9 +107,7 @@ function formatTime(timeString) {
 }
 
 function Appointments() {
-  const [appointments, setAppointments] = useState(
-    getInitialAppointments
-  );
+  const [appointments, setAppointments] = useState(getInitialAppointments);
 
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
@@ -133,7 +127,7 @@ function Appointments() {
     try {
       localStorage.setItem(
         "mypatienthub-appointments",
-        JSON.stringify(appointments)
+        JSON.stringify(appointments),
       );
     } catch (error) {
       console.error("Could not save appointments:", error);
@@ -143,37 +137,31 @@ function Appointments() {
   const today = getDateOffset(0);
 
   const upcomingCount = appointments.filter(
-    (appointment) => appointment.status === "Upcoming"
+    (appointment) => appointment.status === "Upcoming",
   ).length;
 
   const completedCount = appointments.filter(
-    (appointment) => appointment.status === "Completed"
+    (appointment) => appointment.status === "Completed",
   ).length;
 
   const cancelledCount = appointments.filter(
-    (appointment) => appointment.status === "Cancelled"
+    (appointment) => appointment.status === "Cancelled",
   ).length;
 
   const filteredAppointments = appointments
     .filter((appointment) => {
       const matchesFilter =
-        activeFilter === "All" ||
-        appointment.status === activeFilter;
+        activeFilter === "All" || appointment.status === activeFilter;
 
       const matchesSearch =
-        appointment.doctor
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase()) ||
-        appointment.specialty
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
+        appointment.doctor.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        appointment.specialty.toLowerCase().includes(searchTerm.toLowerCase());
 
       return matchesFilter && matchesSearch;
     })
     .sort((a, b) => {
       return (
-        new Date(a.date) - new Date(b.date) ||
-        a.time.localeCompare(b.time)
+        new Date(a.date) - new Date(b.date) || a.time.localeCompare(b.time)
       );
     });
 
@@ -228,9 +216,7 @@ function Appointments() {
       return;
     }
 
-    const doctor = doctors.find(
-      (item) => item.name === formData.doctor
-    );
+    const doctor = doctors.find((item) => item.name === formData.doctor);
 
     if (!doctor) {
       setMessage("Please select a valid doctor.");
@@ -249,8 +235,8 @@ function Appointments() {
                 reason: formData.reason,
                 status: "Upcoming",
               }
-            : appointment
-        )
+            : appointment,
+        ),
       );
 
       setMessage("Appointment rescheduled successfully.");
@@ -279,35 +265,29 @@ function Appointments() {
 
   function cancelAppointment(appointment) {
     const confirmed = window.confirm(
-      `Are you sure you want to cancel your appointment with ${appointment.doctor}?`
+      `Are you sure you want to cancel your appointment with ${appointment.doctor}?`,
     );
 
     if (!confirmed) return;
 
     setAppointments((previousAppointments) =>
       previousAppointments.map((item) =>
-        item.id === appointment.id
-          ? { ...item, status: "Cancelled" }
-          : item
-      )
+        item.id === appointment.id ? { ...item, status: "Cancelled" } : item,
+      ),
     );
 
     setMessage("Appointment cancelled successfully.");
   }
 
   function markAsCompleted(appointment) {
-    const confirmed = window.confirm(
-      "Mark this appointment as completed?"
-    );
+    const confirmed = window.confirm("Mark this appointment as completed?");
 
     if (!confirmed) return;
 
     setAppointments((previousAppointments) =>
       previousAppointments.map((item) =>
-        item.id === appointment.id
-          ? { ...item, status: "Completed" }
-          : item
-      )
+        item.id === appointment.id ? { ...item, status: "Completed" } : item,
+      ),
     );
 
     setMessage("Appointment marked as completed.");
@@ -315,7 +295,7 @@ function Appointments() {
 
   function resetDemoAppointments() {
     const confirmed = window.confirm(
-      "Reset the appointment list to its original sample data? Your current appointment changes will be lost."
+      "Reset the appointment list to its original sample data? Your current appointment changes will be lost.",
     );
 
     if (!confirmed) return;
@@ -337,10 +317,7 @@ function Appointments() {
           </p>
         </div>
 
-        <button
-          className="appointment-primary-btn"
-          onClick={openBookingForm}
-        >
+        <button className="appointment-primary-btn" onClick={openBookingForm}>
           <span>+</span> Book Appointment
         </button>
       </div>
@@ -421,45 +398,36 @@ function Appointments() {
           </div>
 
           <div className="appointment-filters">
-            {["All", "Upcoming", "Completed", "Cancelled"].map(
-              (filter) => (
-                <button
-                  key={filter}
-                  className={
-                    activeFilter === filter ? "active" : ""
-                  }
-                  onClick={() => setActiveFilter(filter)}
-                >
-                  {filter}
-                </button>
-              )
-            )}
+            {["All", "Upcoming", "Completed", "Cancelled"].map((filter) => (
+              <button
+                key={filter}
+                className={activeFilter === filter ? "active" : ""}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}
+              </button>
+            ))}
           </div>
         </div>
 
         <div className="appointment-list">
           {filteredAppointments.length > 0 ? (
             filteredAppointments.map((appointment) => (
-              <article
-                className="appointment-card"
-                key={appointment.id}
-              >
+              <article className="appointment-card" key={appointment.id}>
                 <div className="appointment-date-box">
                   <span>
                     {new Date(
-                      `${appointment.date}T12:00:00`
+                      `${appointment.date}T12:00:00`,
                     ).toLocaleDateString("en-US", {
                       month: "short",
                     })}
                   </span>
                   <strong>
-                    {new Date(
-                      `${appointment.date}T12:00:00`
-                    ).getDate()}
+                    {new Date(`${appointment.date}T12:00:00`).getDate()}
                   </strong>
                   <small>
                     {new Date(
-                      `${appointment.date}T12:00:00`
+                      `${appointment.date}T12:00:00`,
                     ).toLocaleDateString("en-US", {
                       weekday: "short",
                     })}
@@ -471,9 +439,7 @@ function Appointments() {
                   <p>{appointment.specialty}</p>
 
                   <div className="appointment-meta">
-                    <span>
-                      ◷ {formatTime(appointment.time)}
-                    </span>
+                    <span>◷ {formatTime(appointment.time)}</span>
                     <span>•</span>
                     <span>{appointment.type}</span>
                   </div>
@@ -500,27 +466,21 @@ function Appointments() {
                     <>
                       <button
                         className="appointment-reschedule-btn"
-                        onClick={() =>
-                          openRescheduleForm(appointment)
-                        }
+                        onClick={() => openRescheduleForm(appointment)}
                       >
                         Reschedule
                       </button>
 
                       <button
                         className="appointment-cancel-btn"
-                        onClick={() =>
-                          cancelAppointment(appointment)
-                        }
+                        onClick={() => cancelAppointment(appointment)}
                       >
                         Cancel
                       </button>
 
                       <button
                         className="appointment-complete-btn"
-                        onClick={() =>
-                          markAsCompleted(appointment)
-                        }
+                        onClick={() => markAsCompleted(appointment)}
                       >
                         Mark Completed
                       </button>
@@ -533,10 +493,7 @@ function Appointments() {
             <div className="appointment-empty-state">
               <div>▦</div>
               <h3>No appointments found</h3>
-              <p>
-                Try another search or filter, or book a new
-                appointment.
-              </p>
+              <p>Try another search or filter, or book a new appointment.</p>
               <button
                 className="appointment-primary-btn"
                 onClick={openBookingForm}
@@ -558,9 +515,7 @@ function Appointments() {
           >
             <div className="appointment-modal-heading">
               <div>
-                <h2 id="appointment-modal-title">
-                  Book an Appointment
-                </h2>
+                <h2 id="appointment-modal-title">Book an Appointment</h2>
                 <p>Enter your visit details below.</p>
               </div>
               <button onClick={closeModal} aria-label="Close">
@@ -633,9 +588,7 @@ function Appointments() {
                 <option value="Online">Online consultation</option>
               </select>
 
-              <label htmlFor="appointment-reason">
-                Reason for Visit
-              </label>
+              <label htmlFor="appointment-reason">Reason for Visit</label>
               <textarea
                 id="appointment-reason"
                 name="reason"
@@ -654,10 +607,7 @@ function Appointments() {
                 >
                   Go Back
                 </button>
-                <button
-                  type="submit"
-                  className="appointment-primary-btn"
-                >
+                <button type="submit" className="appointment-primary-btn">
                   Confirm Booking
                 </button>
               </div>
@@ -676,12 +626,9 @@ function Appointments() {
           >
             <div className="appointment-modal-heading">
               <div>
-                <h2 id="reschedule-modal-title">
-                  Reschedule Appointment
-                </h2>
+                <h2 id="reschedule-modal-title">Reschedule Appointment</h2>
                 <p>
-                  Choose a new date and time for{" "}
-                  {selectedAppointment?.doctor}.
+                  Choose a new date and time for {selectedAppointment?.doctor}.
                 </p>
               </div>
               <button onClick={closeModal} aria-label="Close">
@@ -750,10 +697,7 @@ function Appointments() {
                 >
                   Go Back
                 </button>
-                <button
-                  type="submit"
-                  className="appointment-primary-btn"
-                >
+                <button type="submit" className="appointment-primary-btn">
                   Save Changes
                 </button>
               </div>
@@ -772,9 +716,7 @@ function Appointments() {
           >
             <div className="appointment-modal-heading">
               <div>
-                <h2 id="details-modal-title">
-                  Appointment Details
-                </h2>
+                <h2 id="details-modal-title">Appointment Details</h2>
                 <p>Review your appointment information.</p>
               </div>
               <button onClick={closeModal} aria-label="Close">
@@ -809,9 +751,7 @@ function Appointments() {
               </div>
               <div>
                 <span>Reason for Visit</span>
-                <strong>
-                  {selectedAppointment.reason || "Not provided"}
-                </strong>
+                <strong>{selectedAppointment.reason || "Not provided"}</strong>
               </div>
             </div>
 
@@ -826,9 +766,7 @@ function Appointments() {
               {selectedAppointment.status === "Upcoming" && (
                 <button
                   className="appointment-primary-btn"
-                  onClick={() =>
-                    openRescheduleForm(selectedAppointment)
-                  }
+                  onClick={() => openRescheduleForm(selectedAppointment)}
                 >
                   Reschedule
                 </button>
@@ -840,9 +778,8 @@ function Appointments() {
 
       <footer className="doctor-footer">
         <p>
-          © 2026 MyPatientHUB. Made with{" "}
-          <span className="footer-heart">♥</span> for better
-          healthcare.
+          © 2026 MyPatientHUB. Made with <span className="footer-heart">♥</span>{" "}
+          for better healthcare.
         </p>
 
         <div className="doctor-footer-links">

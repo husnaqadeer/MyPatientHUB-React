@@ -1,42 +1,41 @@
-
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Signup.css';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Signup.css";
 
 function Signup() {
   const navigate = useNavigate();
 
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
 
     if (!fullName.trim() || !email.trim() || !password || !confirmPassword) {
-      setMessage('Please complete all fields.');
+      setMessage("Please complete all fields.");
       return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setMessage('Please enter a valid email address.');
+      setMessage("Please enter a valid email address.");
       return;
     }
 
     if (password.length < 6) {
-      setMessage('Your password must contain at least 6 characters.');
+      setMessage("Your password must contain at least 6 characters.");
       return;
     }
 
     if (password !== confirmPassword) {
-      setMessage('Your passwords do not match.');
+      setMessage("Your passwords do not match.");
       return;
     }
 
-    navigate('/dashboard');
+    navigate("/dashboard");
   }
 
   return (
@@ -72,7 +71,7 @@ function Signup() {
           <div className="signup-password">
             <input
               id="signupPassword"
-              type={showPassword ? 'text' : 'password'}
+              type={showPassword ? "text" : "password"}
               placeholder="Create a password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
@@ -81,11 +80,11 @@ function Signup() {
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              aria-label={showPassword ? 'Hide password' : 'Show password'}
+              aria-label={showPassword ? "Hide password" : "Show password"}
             >
               <i
                 className={`fa-solid ${
-                  showPassword ? 'fa-eye-slash' : 'fa-eye'
+                  showPassword ? "fa-eye-slash" : "fa-eye"
                 }`}
               ></i>
             </button>

@@ -1,12 +1,13 @@
-
 import { useState } from "react";
 import "./AccountSettings.css";
 
 function AccountSettings() {
+  // Store account settings
   const [profileVisible, setProfileVisible] = useState(true);
   const [twoFactor, setTwoFactor] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
 
+  // Store personal information
   const [formData, setFormData] = useState({
     firstName: "Husna",
     lastName: "Qadeer",
@@ -19,12 +20,14 @@ function AccountSettings() {
     weight: "",
   });
 
+  // Store password form values
   const [passwordData, setPasswordData] = useState({
     currentPassword: "",
     newPassword: "",
     confirmPassword: "",
   });
 
+  // Update personal information
   function handleInfoChange(event) {
     const { name, value } = event.target;
 
@@ -34,6 +37,7 @@ function AccountSettings() {
     });
   }
 
+  // Update password fields
   function handlePasswordChange(event) {
     const { name, value } = event.target;
 
@@ -43,44 +47,52 @@ function AccountSettings() {
     });
   }
 
+  // Handle saving personal information
   function handleInfoSubmit(event) {
     event.preventDefault();
     alert("Basic information saved!");
   }
 
+  // Validate the new password
   function handlePasswordSubmit(event) {
     event.preventDefault();
 
+    // Check password length
     if (passwordData.newPassword.length < 8) {
       alert("Your new password must contain at least 8 characters.");
       return;
     }
 
+    // Check password character requirements
     if (
       !/[A-Z]/.test(passwordData.newPassword) ||
       !/[a-z]/.test(passwordData.newPassword) ||
       !/[0-9]/.test(passwordData.newPassword)
     ) {
       alert(
-        "Your password must contain an uppercase letter, a lowercase letter, and a number."
+        "Your password must contain an uppercase letter, a lowercase letter, and a number.",
       );
       return;
     }
 
+    // Check whether the passwords match
     if (passwordData.newPassword !== passwordData.confirmPassword) {
       alert("The new passwords do not match.");
       return;
     }
 
+    // Prevent reusing the current password
     if (passwordData.currentPassword === passwordData.newPassword) {
       alert("Your new password must be different from your current password.");
       return;
     }
 
+    // Show a message because a backend is required
     alert(
-      "Password form validated. Connect a backend to change your password."
+      "Password form validated. Connect a backend to change your password.",
     );
 
+    // Clear password fields
     setPasswordData({
       currentPassword: "",
       newPassword: "",
@@ -88,19 +100,21 @@ function AccountSettings() {
     });
   }
 
+  // Toggle two-factor authentication
   function handleTwoFactorChange() {
     setTwoFactor(!twoFactor);
 
     if (!twoFactor) {
       alert(
-        "Two-factor setup selected. A real application must verify your identity and complete setup."
+        "Two-factor setup selected.",
       );
     }
   }
 
+  // Handle account deactivation
   function handleDeactivate() {
     const confirmed = window.confirm(
-      "Are you sure you want to deactivate your account?"
+      "Are you sure you want to deactivate your account?",
     );
 
     if (confirmed) {
@@ -108,6 +122,7 @@ function AccountSettings() {
     }
   }
 
+  // Handle account deletion
   function handleDelete() {
     if (!confirmDelete) {
       alert("Please confirm that you want to delete your account.");
@@ -115,7 +130,7 @@ function AccountSettings() {
     }
 
     const confirmed = window.confirm(
-      "This action may permanently delete your account. Do you want to continue?"
+      "This action may permanently delete your account. Do you want to continue?",
     );
 
     if (confirmed) {
@@ -123,8 +138,10 @@ function AccountSettings() {
     }
   }
 
+  // Display the account settings page
   return (
     <div className="account-settings-page">
+      {/* Page heading */}
       <div className="settings-heading">
         <div>
           <span className="settings-eyebrow">MY PATIENTHUB</span>
@@ -137,7 +154,9 @@ function AccountSettings() {
         <div className="settings-heading-icon">⚙</div>
       </div>
 
+      {/* Sidebar and main content */}
       <div className="settings-layout">
+        {/* Sidebar navigation */}
         <aside className="settings-sidebar">
           <div className="sidebar-profile">
             <img src="Pinkprofile.jpg" alt="Patient profile" />
@@ -152,6 +171,7 @@ function AccountSettings() {
 
           <p className="sidebar-label">ACCOUNT MENU</p>
 
+          {/* Navigate between settings sections */}
           <a href="#profile" className="settings-nav-link active">
             <span>👤</span> Profile
           </a>
@@ -172,13 +192,11 @@ function AccountSettings() {
             <span>💻</span> Sessions
           </a>
 
-          <a
-            href="#delete-account"
-            className="settings-nav-link danger-link"
-          >
+          <a href="#delete-account" className="settings-nav-link danger-link">
             <span>🗑️</span> Delete Account
           </a>
 
+          {/* Display the privacy reminder */}
           <div className="sidebar-help">
             <span>🔐</span>
             <h4>Your privacy matters</h4>
@@ -186,6 +204,7 @@ function AccountSettings() {
           </div>
         </aside>
 
+        {/* Main settings sections */}
         <main className="settings-content">
           {/* PROFILE CARD */}
           <section id="profile" className="settings-card profile-card">
@@ -198,6 +217,7 @@ function AccountSettings() {
               <span className="section-icon">👤</span>
             </div>
 
+            {/* Display profile information and visibility */}
             <div className="profile-details">
               <img
                 className="profile-photo"
@@ -205,7 +225,7 @@ function AccountSettings() {
                 alt="Patient profile"
               />
 
-              {/* PROFILE VISIBILITY */}
+              {/* Show or hide profile details */}
               <div className="profile-name">
                 {profileVisible ? (
                   <>
@@ -218,13 +238,12 @@ function AccountSettings() {
                 ) : (
                   <>
                     <h3>Profile Hidden</h3>
-                    <p>
-                      Your profile information is hidden in this preview.
-                    </p>
+                    <p>Your profile information is hidden in this preview.</p>
                   </>
                 )}
               </div>
 
+              {/* Toggle profile visibility */}
               <div className="visibility-control">
                 <div>
                   <strong>Profile visibility</strong>
@@ -264,6 +283,7 @@ function AccountSettings() {
               <span className="section-icon">📋</span>
             </div>
 
+            {/* Form for personal and health information */}
             <form onSubmit={handleInfoSubmit}>
               <div className="settings-form-grid">
                 <div className="settings-field">
@@ -304,9 +324,7 @@ function AccountSettings() {
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
                     <option value="Other">Other</option>
-                    <option value="Prefer not to say">
-                      Prefer not to say
-                    </option>
+                    <option value="Prefer not to say">Prefer not to say</option>
                   </select>
                 </div>
 
@@ -395,11 +413,9 @@ function AccountSettings() {
                 </div>
               </div>
 
+              {/* Save personal information */}
               <div className="form-actions">
-                <button
-                  type="submit"
-                  className="settings-primary-button"
-                >
+                <button type="submit" className="settings-primary-button">
                   Save Changes
                 </button>
               </div>
@@ -417,6 +433,7 @@ function AccountSettings() {
               <span className="section-icon">🔒</span>
             </div>
 
+            {/* Form for changing the password */}
             <form onSubmit={handlePasswordSubmit}>
               <div className="settings-field password-field">
                 <label htmlFor="currentPassword">Current Password</label>
@@ -460,6 +477,7 @@ function AccountSettings() {
                 />
               </div>
 
+              {/* Display password rules */}
               <div className="password-requirements">
                 <h4>Password requirements</h4>
                 <p>✓ At least 8 characters</p>
@@ -468,10 +486,7 @@ function AccountSettings() {
                 <p>✓ New password must differ from current password</p>
               </div>
 
-              <button
-                type="submit"
-                className="settings-primary-button"
-              >
+              <button type="submit" className="settings-primary-button">
                 Update Password
               </button>
             </form>
@@ -488,6 +503,7 @@ function AccountSettings() {
               <span className="section-icon">🛡️</span>
             </div>
 
+            {/* Display two-factor authentication settings */}
             <div className="security-feature">
               <div className="feature-icon purple-icon">🔐</div>
 
@@ -498,15 +514,15 @@ function AccountSettings() {
                   step when signing in.
                 </p>
 
+                {/* Show the current setup status */}
                 <span
-                  className={
-                    twoFactor ? "status-enabled" : "status-disabled"
-                  }
+                  className={twoFactor ? "status-enabled" : "status-disabled"}
                 >
                   {twoFactor ? "Setup selected" : "Not configured"}
                 </span>
               </div>
 
+              {/* Toggle the demo setting */}
               <label className="switch">
                 <input
                   type="checkbox"
@@ -519,8 +535,8 @@ function AccountSettings() {
             </div>
 
             <div className="security-note">
-              <strong>Recommended:</strong> Use an authenticator app.
-              This demonstration switch does not activate real 2FA.
+              <strong>Recommended:</strong> Use an authenticator app. This
+              demonstration switch does not activate real 2FA.
             </div>
           </section>
 
@@ -535,6 +551,7 @@ function AccountSettings() {
               <span className="section-icon">💻</span>
             </div>
 
+            {/* Display the current device session */}
             <div className="session-item">
               <div className="feature-icon green-icon">💻</div>
 
@@ -547,6 +564,7 @@ function AccountSettings() {
               <span className="session-current">Active</span>
             </div>
 
+            {/* Display an example mobile session */}
             <div className="session-item">
               <div className="feature-icon blue-icon">📱</div>
 
@@ -556,12 +574,13 @@ function AccountSettings() {
                 <span className="session-muted">Demo information</span>
               </div>
 
+              {/* Handle signing out a device */}
               <button
                 type="button"
                 className="settings-outline-button"
                 onClick={() =>
                   alert(
-                    "Signing out devices requires backend session management."
+                    "Signing out devices requires backend session management.",
                   )
                 }
               >
@@ -569,18 +588,16 @@ function AccountSettings() {
               </button>
             </div>
 
+            {/* Display the security reminder */}
             <div className="session-footer">
               <span>🔎</span>
-              If you notice an unfamiliar device, secure your account and
-              change your password.
+              If you notice an unfamiliar device, secure your account and change
+              your password.
             </div>
           </section>
 
           {/* DELETE AND DEACTIVATE ACCOUNT */}
-          <section
-            id="delete-account"
-            className="settings-card danger-card"
-          >
+          <section id="delete-account" className="settings-card danger-card">
             <div className="section-heading">
               <div>
                 <h2>Deactivate or Delete Account</h2>
@@ -590,12 +607,13 @@ function AccountSettings() {
               <span className="section-icon danger-icon">⚠️</span>
             </div>
 
+            {/* Option to deactivate the account */}
             <div className="deactivate-box">
               <div>
                 <h3>Deactivate Account</h3>
                 <p>
-                  Temporarily disable access to your account. Reactivation
-                  would depend on your account service.
+                  Temporarily disable access to your account. Reactivation would
+                  depend on your account service.
                 </p>
               </div>
 
@@ -608,21 +626,21 @@ function AccountSettings() {
               </button>
             </div>
 
+            {/* Confirm permanent account deletion */}
             <div className="delete-warning">
               <h3>Delete Account Permanently</h3>
               <p>
                 This is a serious action. Account deletion may remove your
-                profile and associated information. Make sure you understand
-                the consequences before proceeding.
+                profile and associated information. Make sure you understand the
+                consequences before proceeding.
               </p>
 
+              {/* Require confirmation before deletion */}
               <label className="delete-confirmation">
                 <input
                   type="checkbox"
                   checked={confirmDelete}
-                  onChange={(event) =>
-                    setConfirmDelete(event.target.checked)
-                  }
+                  onChange={(event) => setConfirmDelete(event.target.checked)}
                 />
                 I understand and confirm that I want to delete my account.
               </label>
@@ -643,9 +661,8 @@ function AccountSettings() {
       {/* SHARED FOOTER */}
       <footer className="doctor-footer">
         <p>
-          © 2026 MyPatientHUB. Made with{" "}
-          <span className="footer-heart">♥</span> for better
-          healthcare.
+          © 2026 MyPatientHUB. Made with <span className="footer-heart">♥</span>{" "}
+          for better healthcare.
         </p>
 
         <div className="doctor-footer-links">

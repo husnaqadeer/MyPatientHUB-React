@@ -1,7 +1,4 @@
-
-/* =========================
-   ACCOUNT SETTINGS PAGE
-========================= */
+/* ACCOUNT SETTINGS PAGE */
 
 .account-settings-page {
   min-height: 100vh;
@@ -16,9 +13,7 @@
   box-sizing: border-box;
 }
 
-/* =========================
-   PAGE HEADING
-========================= */
+/* PAGE HEADING */
 
 .settings-heading {
   display: flex;
@@ -60,9 +55,7 @@
   font-size: 26px;
 }
 
-/* =========================
-   MAIN LAYOUT
-========================= */
+/* MAIN LAYOUT */
 
 .settings-layout {
   display: grid;
@@ -73,9 +66,7 @@
   margin: 0 auto;
 }
 
-/* =========================
-   SETTINGS SIDEBAR
-========================= */
+/* SETTINGS SIDEBAR */
 
 .settings-sidebar {
   position: sticky;
@@ -132,7 +123,9 @@
   color: #697586;
   font-size: 13px;
   text-decoration: none;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .settings-nav-link span {
@@ -180,9 +173,7 @@
   line-height: 1.7;
 }
 
-/* =========================
-   SETTINGS CONTENT
-========================= */
+/* SETTINGS CONTENT */
 
 .settings-content {
   min-width: 0;
@@ -232,9 +223,7 @@
   font-size: 20px;
 }
 
-/* =========================
-   PROFILE CARD
-========================= */
+/* PROFILE CARD */
 
 .profile-details {
   display: flex;
@@ -309,9 +298,7 @@
   line-height: 1.7;
 }
 
-/* =========================
-   FORM FIELDS
-========================= */
+/* FORM FIELDS */
 
 .settings-form-grid {
   display: grid;
@@ -345,7 +332,9 @@
   color: #344054;
   font-family: inherit;
   font-size: 12px;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .settings-field input::placeholder {
@@ -364,9 +353,7 @@
   margin-top: 28px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 .settings-primary-button,
 .settings-outline-button,
@@ -424,9 +411,7 @@
   cursor: not-allowed;
 }
 
-/* =========================
-   PASSWORD REQUIREMENTS
-========================= */
+/* PASSWORD REQUIREMENTS */
 
 .password-field {
   margin-bottom: 20px;
@@ -453,9 +438,7 @@
   line-height: 1.5;
 }
 
-/* =========================
-   TOGGLE SWITCHES
-========================= */
+/* TOGGLE SWITCHES */
 
 .switch {
   position: relative;
@@ -507,9 +490,7 @@
   outline-offset: 3px;
 }
 
-/* =========================
-   SECURITY AND 2FA
-========================= */
+/* SECURITY AND 2FA */
 
 .security-feature,
 .session-item {
@@ -594,9 +575,7 @@
   color: #9e00c7;
 }
 
-/* =========================
-   ACTIVE SESSIONS
-========================= */
+/* ACTIVE SESSIONS */
 
 .session-item + .session-item {
   border-top: 1px solid #e4e7ec;
@@ -625,9 +604,7 @@
   line-height: 1.7;
 }
 
-/* =========================
-   DELETE AND DEACTIVATE
-========================= */
+/* DELETE AND DEACTIVATE */
 
 .danger-card {
   border-color: #f1dfe0;
@@ -701,9 +678,7 @@
   text-align: center;
 }
 
-/* =========================
-   SHARED FOOTER
-========================= */
+/* SHARED FOOTER */
 
 .account-settings-page .doctor-footer {
   margin-top: 35px;
@@ -738,9 +713,7 @@
   color: #d0d5dd;
 }
 
-/* =========================================
-   DARK MODE - MAIN PAGE
-========================================= */
+/* DARK MODE - MAIN PAGE */
 
 body.dark-mode .account-settings-page {
   background: #0f172a;
@@ -748,9 +721,7 @@ body.dark-mode .account-settings-page {
   color-scheme: dark;
 }
 
-/* =========================================
-   DARK MODE - PAGE HEADING
-========================================= */
+/* DARK MODE - PAGE HEADING */
 
 body.dark-mode .account-settings-page .settings-eyebrow {
   color: #f0abfc;
@@ -770,9 +741,7 @@ body.dark-mode .account-settings-page .settings-heading-icon {
   color: #f5d0fe;
 }
 
-/* =========================================
-   DARK MODE - SIDEBAR
-========================================= */
+/* DARK MODE - SIDEBAR */
 
 body.dark-mode .account-settings-page .settings-sidebar {
   background: #1e293b;
@@ -811,9 +780,7 @@ body.dark-mode .account-settings-page .settings-nav-link.danger-link:hover {
   color: #fecaca;
 }
 
-/* =========================================
-   DARK MODE - SIDEBAR HELP
-========================================= */
+/* DARK MODE - SIDEBAR HELP */
 
 body.dark-mode .account-settings-page .sidebar-help {
   background: #334155;
@@ -834,9 +801,7 @@ body.dark-mode .account-settings-page .sidebar-help p {
   color: #cbd5e1;
 }
 
-/* =========================================
-   DARK MODE - SETTINGS CARDS
-========================================= */
+/* DARK MODE - SETTINGS CARDS */
 
 body.dark-mode .account-settings-page .settings-card {
   background: #1e293b;
@@ -858,9 +823,7 @@ body.dark-mode .account-settings-page .section-icon {
   color: #f5d0fe;
 }
 
-/* =========================================
-   DARK MODE - PROFILE
-========================================= */
+/* DARK MODE - PROFILE*/
 
 body.dark-mode .account-settings-page .profile-photo {
   border-color: #c084fc;
@@ -898,9 +861,7 @@ body.dark-mode .account-settings-page .helper-text {
   color: #e2e8f0;
 }
 
-/* =========================================
-   DARK MODE - FORM FIELDS
-========================================= */
+/* DARK MODE - FORM FIELDS */
 
 body.dark-mode .account-settings-page .settings-field label {
   color: #e2e8f0;
@@ -928,9 +889,7 @@ body.dark-mode .account-settings-page .settings-field select:focus {
   box-shadow: 0 0 0 3px rgba(232, 121, 249, 0.18);
 }
 
-/* =========================================
-   DARK MODE - BUTTONS
-========================================= */
+/* DARK MODE - BUTTONS */
 
 body.dark-mode .account-settings-page .settings-primary-button {
   background: linear-gradient(135deg, #c026d3, #7e22ce);
@@ -959,7 +918,9 @@ body.dark-mode .account-settings-page .settings-danger-button {
   color: #ffffff;
 }
 
-body.dark-mode .account-settings-page .settings-danger-button:hover:not(:disabled) {
+body.dark-mode
+  .account-settings-page
+  .settings-danger-button:hover:not(:disabled) {
   background: #991b1b;
 }
 
@@ -970,9 +931,7 @@ body.dark-mode .account-settings-page .settings-danger-button:disabled {
   opacity: 0.65;
 }
 
-/* =========================================
-   DARK MODE - PASSWORD REQUIREMENTS
-========================================= */
+/* DARK MODE - PASSWORD REQUIREMENTS */
 
 body.dark-mode .account-settings-page .password-requirements {
   background: #312044;
@@ -987,9 +946,7 @@ body.dark-mode .account-settings-page .password-requirements p {
   color: #e2e8f0;
 }
 
-/* =========================================
-   DARK MODE - TOGGLE SWITCHES
-========================================= */
+/* DARK MODE - TOGGLE SWITCHES */
 
 body.dark-mode .account-settings-page .switch-slider {
   background: #64748b;
@@ -1003,13 +960,15 @@ body.dark-mode .account-settings-page .switch input:checked + .switch-slider {
   background: #c026d3;
 }
 
-body.dark-mode .account-settings-page .switch input:focus-visible + .switch-slider {
+body.dark-mode
+  .account-settings-page
+  .switch
+  input:focus-visible
+  + .switch-slider {
   outline-color: #f0abfc;
 }
 
-/* =========================================
-   DARK MODE - SECURITY ICONS
-========================================= */
+/* DARK MODE - SECURITY ICONS*/
 
 body.dark-mode .account-settings-page .feature-icon {
   border: 1px solid #64748b;
@@ -1030,9 +989,7 @@ body.dark-mode .account-settings-page .blue-icon {
   color: #bfdbfe;
 }
 
-/* =========================================
-   DARK MODE - SECURITY DETAILS
-========================================= */
+/* DARK MODE - SECURITY DETAILS */
 
 body.dark-mode .account-settings-page .feature-description h3 {
   color: #ffffff;
@@ -1061,9 +1018,7 @@ body.dark-mode .account-settings-page .security-note strong {
   color: #f5d0fe;
 }
 
-/* =========================================
-   DARK MODE - ACTIVE SESSIONS
-========================================= */
+/* DARK MODE - ACTIVE SESSIONS*/
 
 body.dark-mode .account-settings-page .session-item + .session-item {
   border-top-color: #475569;
@@ -1081,9 +1036,7 @@ body.dark-mode .account-settings-page .session-footer {
   color: #e2e8f0;
 }
 
-/* =========================================
-   DARK MODE - DANGER SECTION
-========================================= */
+/* DARK MODE - DANGER SECTION */
 
 body.dark-mode .account-settings-page .danger-card {
   border-color: #991b1b;
@@ -1124,9 +1077,7 @@ body.dark-mode .account-settings-page .delete-confirmation {
   color: #fee2e2;
 }
 
-/* =========================================
-   DARK MODE - ICON VISIBILITY
-========================================= */
+/* DARK MODE - ICON VISIBILITY */
 
 body.dark-mode .account-settings-page .settings-heading-icon i,
 body.dark-mode .account-settings-page .section-icon i,
@@ -1141,9 +1092,7 @@ body.dark-mode .account-settings-page .settings-nav-link svg {
   visibility: visible;
 }
 
-/* =========================================
-   DARK MODE - FOOTER
-========================================= */
+/* DARK MODE - FOOTER */
 
 body.dark-mode .account-settings-page .settings-footer {
   color: #cbd5e1;
@@ -1166,9 +1115,7 @@ body.dark-mode .account-settings-page .doctor-footer-links span + span::before {
   color: #64748b;
 }
 
-/* =========================================
-   KEYBOARD FOCUS
-========================================= */
+/* KEYBOARD FOCUS */
 
 .account-settings-page button:focus-visible,
 .account-settings-page a:focus-visible {
@@ -1181,9 +1128,7 @@ body.dark-mode .account-settings-page a:focus-visible {
   outline-color: #e879f9;
 }
 
-/* =========================
-   TABLET RESPONSIVENESS
-========================= */
+/* TABLET RESPONSIVENESS */
 
 @media (max-width: 1000px) {
   .account-settings-page {
@@ -1216,9 +1161,7 @@ body.dark-mode .account-settings-page a:focus-visible {
   }
 }
 
-/* =========================
-   MOBILE RESPONSIVENESS
-========================= */
+/* MOBILE RESPONSIVENESS */
 
 @media (max-width: 700px) {
   .account-settings-page {
@@ -1319,9 +1262,7 @@ body.dark-mode .account-settings-page a:focus-visible {
   }
 }
 
-/* =========================
-   SMALL MOBILE SCREENS
-========================= */
+/* SMALL MOBILE SCREENS */
 
 @media (max-width: 380px) {
   .account-settings-page {
@@ -1356,9 +1297,7 @@ body.dark-mode .account-settings-page a:focus-visible {
   }
 }
 
-/* =========================
-   SMALL MOBILE FOOTER
-========================= */
+/* SMALL MOBILE FOOTER */
 
 @media (max-width: 420px) {
   .account-settings-page .doctor-footer-links {
@@ -1372,9 +1311,7 @@ body.dark-mode .account-settings-page a:focus-visible {
   }
 }
 
-/* =========================================
-   SMOOTH DARK MODE TRANSITIONS
-========================================= */
+/* SMOOTH DARK MODE TRANSITIONS */
 
 .account-settings-page,
 .account-settings-page .settings-sidebar,
@@ -1393,9 +1330,7 @@ body.dark-mode .account-settings-page a:focus-visible {
     border-color 0.3s ease;
 }
 
-/* =========================================
-   REDUCED MOTION
-========================================= */
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   .account-settings-page,

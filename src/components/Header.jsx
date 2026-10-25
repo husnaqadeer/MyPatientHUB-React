@@ -1,310 +1,273 @@
-
 import { useState } from "react";
-import {
-    Link,
-    useLocation,
-    useNavigate,
-} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Header.css";
 
 function Header({ toggleSidebar, isDarkMode, toggleTheme }) {
-    const location = useLocation();
-    const navigate = useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    // Search states
-    const [searchText, setSearchText] = useState("");
-    const [showSuggestions, setShowSuggestions] = useState(false);
+  // Search states
+  const [searchText, setSearchText] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
-    // Notification states
-    const [showNotifications, setShowNotifications] = useState(false);
+  // Notification states
+  const [showNotifications, setShowNotifications] = useState(false);
 
-    const [notifications, setNotifications] = useState([
-        {
-            id: 1,
-            message: "Welcome to MyPatientHUB!",
-            read: false,
-        },
-        {
-            id: 2,
-            message: "Explore doctors and clinics on MyPatientHUB.",
-            read: false,
-        },
-        {
-            id: 3,
-            message: "You can manage your profile in Account Settings.",
-            read: false,
-        },
-    ]);
+  const [notifications, setNotifications] = useState([
+    {
+      id: 1,
+      message: "Welcome to MyPatientHUB!",
+      read: false,
+    },
+    {
+      id: 2,
+      message: "Explore doctors and clinics on MyPatientHUB.",
+      read: false,
+    },
+    {
+      id: 3,
+      message: "You can manage your profile in Account Settings.",
+      read: false,
+    },
+  ]);
 
-    // All searchable pages
-    const pages = [
-        { name: "Dashboard", path: "/dashboard" },
-        { name: "Appointments", path: "/appointments" },
-        { name: "Find Doctor", path: "/find-doctor" },
-        { name: "Find Clinic", path: "/find-clinic" },
-        { name: "Find Pharmacy", path: "/find-pharmacy" },
-        { name: "Marketplace", path: "/find-marketplace" },
-        { name: "My Dependents", path: "/dependents" },
-        { name: "Chat", path: "/chat" },
-        { name: "My Account", path: "/account" },
-        { name: "Settings", path: "/settings" },
-    ];
+  // All searchable pages
+  const pages = [
+    { name: "Dashboard", path: "/dashboard" },
+    { name: "Appointments", path: "/appointments" },
+    { name: "Find Doctor", path: "/find-doctor" },
+    { name: "Find Clinic", path: "/find-clinic" },
+    { name: "Find Pharmacy", path: "/find-pharmacy" },
+    { name: "Marketplace", path: "/find-marketplace" },
+    { name: "My Dependents", path: "/dependents" },
+    { name: "Chat", path: "/chat" },
+    { name: "My Account", path: "/account" },
+    { name: "Settings", path: "/settings" },
+  ];
 
-    // Current page title
-    let pageName = "Dashboard";
+  // Current page title
+  let pageName = "Dashboard";
 
-    const currentPage = pages.find(
-        (page) => page.path === location.pathname
-    );
+  const currentPage = pages.find((page) => page.path === location.pathname);
 
-    if (currentPage) {
-        pageName = currentPage.name;
+  if (currentPage) {
+    pageName = currentPage.name;
+  }
+
+  // Filter search results
+  const searchResults = pages.filter((page) =>
+    page.name.toLowerCase().includes(searchText.toLowerCase()),
+  );
+
+  // Navigate to a selected page
+  function handleSelectPage(path) {
+    navigate(path);
+    setSearchText("");
+    setShowSuggestions(false);
+  }
+
+  // Search when Enter is pressed
+  function handleSearch(event) {
+    event.preventDefault();
+
+    if (searchText.trim() === "") {
+      return;
     }
 
-    // Filter search results
-    const searchResults = pages.filter((page) =>
-        page.name.toLowerCase().includes(searchText.toLowerCase())
-    );
-
-    // Navigate to a selected page
-    function handleSelectPage(path) {
-        navigate(path);
-        setSearchText("");
-        setShowSuggestions(false);
+    if (searchResults.length > 0) {
+      handleSelectPage(searchResults[0].path);
     }
+  }
 
-    // Search when Enter is pressed
-    function handleSearch(event) {
-        event.preventDefault();
+  // Open or close notifications
+  function toggleNotifications() {
+    setShowNotifications(!showNotifications);
+    setShowSuggestions(false);
+  }
 
-        if (searchText.trim() === "") {
-            return;
-        }
+  // Mark all notifications as read
+  function markAllAsRead() {
+    const updatedNotifications = notifications.map((notification) => ({
+      ...notification,
+      read: true,
+    }));
 
-        if (searchResults.length > 0) {
-            handleSelectPage(searchResults[0].path);
-        }
-    }
+    setNotifications(updatedNotifications);
+  }
 
-    // Open or close notifications
-    function toggleNotifications() {
-        setShowNotifications(!showNotifications);
-        setShowSuggestions(false);
-    }
+  // Count unread notifications
+  const unreadCount = notifications.filter(
+    (notification) => !notification.read,
+  ).length;
 
-    // Mark all notifications as read
-    function markAllAsRead() {
-        const updatedNotifications = notifications.map(
-            (notification) => ({
-                ...notification,
-                read: true,
-            })
-        );
+  return (
+    <header className="header">
+      {/* LEFT SIDE */}
 
-        setNotifications(updatedNotifications);
-    }
+      <div className="header-title">
+        <div className="breadcrumb">
+          <i className="fa-solid fa-house"></i>
+          <span>/</span>
+          <span>{pageName}</span>
 
-    // Count unread notifications
-    const unreadCount = notifications.filter(
-        (notification) => !notification.read
-    ).length;
+          <button
+            type="button"
+            className="mobile-menu"
+            onClick={toggleSidebar}
+            aria-label="Toggle sidebar"
+          >
+            <i className="fa-solid fa-bars"></i>
+          </button>
+        </div>
 
-    return (
-        <header className="header">
+        <h2>{pageName}</h2>
+      </div>
 
-            {/* LEFT SIDE */}
+      {/* RIGHT SIDE */}
 
-            <div className="header-title">
-                <div className="breadcrumb">
-                    <i className="fa-solid fa-house"></i>
-                    <span>/</span>
-                    <span>{pageName}</span>
+      <div className="header-right">
+        {/* SEARCH BAR */}
 
-                    <button
-                        type="button"
-                        className="mobile-menu"
-                        onClick={toggleSidebar}
-                        aria-label="Toggle sidebar"
-                    >
-                        <i className="fa-solid fa-bars"></i>
-                    </button>
-                </div>
+        <div className="header-search-container">
+          <form className="header-search" onSubmit={handleSearch}>
+            <i className="fa-solid fa-magnifying-glass"></i>
 
-                <h2>{pageName}</h2>
+            <input
+              type="text"
+              placeholder="Search pages..."
+              value={searchText}
+              onChange={(event) => {
+                setSearchText(event.target.value);
+                setShowSuggestions(true);
+                setShowNotifications(false);
+              }}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => {
+                setTimeout(() => {
+                  setShowSuggestions(false);
+                }, 150);
+              }}
+              aria-label="Search pages"
+            />
+          </form>
+
+          {showSuggestions && searchText.trim() !== "" && (
+            <div className="search-suggestions">
+              {searchResults.length > 0 ? (
+                searchResults.map((page) => (
+                  <button
+                    type="button"
+                    key={page.path}
+                    className="search-suggestion-item"
+                    onMouseDown={(event) => event.preventDefault()}
+                    onClick={() => handleSelectPage(page.path)}
+                  >
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                    {page.name}
+                  </button>
+                ))
+              ) : (
+                <p className="no-search-results">No matching page found</p>
+              )}
             </div>
+          )}
+        </div>
 
-            {/* RIGHT SIDE */}
+        {/* DARK MODE BUTTON */}
 
-            <div className="header-right">
+        <button
+          type="button"
+          className="theme-toggle"
+          onClick={toggleTheme}
+          title={isDarkMode ? "Light Mode" : "Dark Mode"}
+          aria-label={
+            isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+          }
+          aria-pressed={isDarkMode}
+        >
+          <i
+            className={isDarkMode ? "fa-solid fa-sun" : "fa-solid fa-moon"}
+          ></i>
+        </button>
 
-                {/* SEARCH BAR */}
+        {/* LOG OUT */}
 
-                <div className="header-search-container">
-                    <form
-                        className="header-search"
-                        onSubmit={handleSearch}
-                    >
-                        <i className="fa-solid fa-magnifying-glass"></i>
+        <Link to="/login" className="logout">
+          <i className="fa-solid fa-circle-user"></i>
+          Log out
+        </Link>
 
-                        <input
-                            type="text"
-                            placeholder="Search pages..."
-                            value={searchText}
-                            onChange={(event) => {
-                                setSearchText(event.target.value);
-                                setShowSuggestions(true);
-                                setShowNotifications(false);
-                            }}
-                            onFocus={() => setShowSuggestions(true)}
-                            onBlur={() => {
-                                setTimeout(() => {
-                                    setShowSuggestions(false);
-                                }, 150);
-                            }}
-                            aria-label="Search pages"
-                        />
-                    </form>
+        {/* SETTINGS ICON */}
 
-                    {showSuggestions && searchText.trim() !== "" && (
-                        <div className="search-suggestions">
-                            {searchResults.length > 0 ? (
-                                searchResults.map((page) => (
-                                    <button
-                                        type="button"
-                                        key={page.path}
-                                        className="search-suggestion-item"
-                                        onMouseDown={(event) =>
-                                            event.preventDefault()
-                                        }
-                                        onClick={() =>
-                                            handleSelectPage(page.path)
-                                        }
-                                    >
-                                        <i className="fa-solid fa-magnifying-glass"></i>
-                                        {page.name}
-                                    </button>
-                                ))
-                            ) : (
-                                <p className="no-search-results">
-                                    No matching page found
-                                </p>
-                            )}
-                        </div>
-                    )}
-                </div>
+        <Link
+          to="/settings"
+          className="header-icon-button"
+          title="Account Settings"
+          aria-label="Open account settings"
+        >
+          <i className="fa-solid fa-gear header-icon"></i>
+        </Link>
 
-                {/* DARK MODE BUTTON */}
+        {/* NOTIFICATIONS */}
+
+        <div className="notification-container">
+          <button
+            type="button"
+            className="header-icon-button"
+            onClick={toggleNotifications}
+            title="Notifications"
+            aria-label="Notifications"
+            aria-expanded={showNotifications}
+          >
+            <i className="fa-solid fa-bell header-icon"></i>
+
+            {unreadCount > 0 && (
+              <span className="notification-badge">{unreadCount}</span>
+            )}
+          </button>
+
+          {showNotifications && (
+            <div className="notification-dropdown">
+              <div className="notification-header">
+                <h3>Notifications</h3>
 
                 <button
-                    type="button"
-                    className="theme-toggle"
-                    onClick={toggleTheme}
-                    title={isDarkMode ? "Light Mode" : "Dark Mode"}
-                    aria-label={
-                        isDarkMode
-                            ? "Switch to light mode"
-                            : "Switch to dark mode"
-                    }
-                    aria-pressed={isDarkMode}
+                  type="button"
+                  onClick={markAllAsRead}
+                  disabled={unreadCount === 0}
                 >
-                    <i
-                        className={
-                            isDarkMode
-                                ? "fa-solid fa-sun"
-                                : "fa-solid fa-moon"
-                        }
-                    ></i>
+                  Mark all as read
                 </button>
+              </div>
 
-                {/* LOG OUT */}
+              <div className="notification-list">
+                {notifications.map((notification) => (
+                  <div
+                    key={notification.id}
+                    className={
+                      notification.read
+                        ? "notification-item"
+                        : "notification-item unread"
+                    }
+                  >
+                    <i className="fa-solid fa-circle-info"></i>
 
-                <Link to="/login" className="logout">
-                    <i className="fa-solid fa-circle-user"></i>
-                    Log out
-                </Link>
+                    <p>{notification.message}</p>
 
-                {/* SETTINGS ICON */}
+                    {!notification.read && <span className="unread-dot"></span>}
+                  </div>
+                ))}
+              </div>
 
-                <Link
-                    to="/settings"
-                    className="header-icon-button"
-                    title="Account Settings"
-                    aria-label="Open account settings"
-                >
-                    <i className="fa-solid fa-gear header-icon"></i>
-                </Link>
-
-                {/* NOTIFICATIONS */}
-
-                <div className="notification-container">
-
-                    <button
-                        type="button"
-                        className="header-icon-button"
-                        onClick={toggleNotifications}
-                        title="Notifications"
-                        aria-label="Notifications"
-                        aria-expanded={showNotifications}
-                    >
-                        <i className="fa-solid fa-bell header-icon"></i>
-
-                        {unreadCount > 0 && (
-                            <span className="notification-badge">
-                                {unreadCount}
-                            </span>
-                        )}
-                    </button>
-
-                    {showNotifications && (
-                        <div className="notification-dropdown">
-
-                            <div className="notification-header">
-                                <h3>Notifications</h3>
-
-                                <button
-                                    type="button"
-                                    onClick={markAllAsRead}
-                                    disabled={unreadCount === 0}
-                                >
-                                    Mark all as read
-                                </button>
-                            </div>
-
-                            <div className="notification-list">
-                                {notifications.map((notification) => (
-                                    <div
-                                        key={notification.id}
-                                        className={
-                                            notification.read
-                                                ? "notification-item"
-                                                : "notification-item unread"
-                                        }
-                                    >
-                                        <i className="fa-solid fa-circle-info"></i>
-
-                                        <p>{notification.message}</p>
-
-                                        {!notification.read && (
-                                            <span className="unread-dot"></span>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-
-                            {unreadCount === 0 && (
-                                <p className="all-read-message">
-                                    You're all caught up!
-                                </p>
-                            )}
-
-                        </div>
-                    )}
-
-                </div>
-
+              {unreadCount === 0 && (
+                <p className="all-read-message">You're all caught up!</p>
+              )}
             </div>
-        </header>
-    );
+          )}
+        </div>
+      </div>
+    </header>
+  );
 }
 
 export default Header;

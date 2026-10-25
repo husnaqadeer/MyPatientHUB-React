@@ -1,7 +1,4 @@
-
-/* =========================
-   MY ACCOUNT PAGE
-========================= */
+/* MY ACCOUNT PAGE */
 
 .account-page {
   box-sizing: border-box;
@@ -35,9 +32,7 @@
   outline-offset: 3px;
 }
 
-/* =========================
-   PAGE HEADING
-========================= */
+/* PAGE HEADING */
 
 .account-heading {
   display: flex;
@@ -81,9 +76,7 @@
   font-size: 20px;
 }
 
-/* =========================
-   MESSAGE
-========================= */
+/* MESSAGE */
 
 .account-message {
   display: flex;
@@ -107,9 +100,7 @@
   font-size: 17px;
 }
 
-/* =========================
-   SUMMARY CARDS
-========================= */
+/* SUMMARY CARDS */
 
 .account-summary {
   display: grid;
@@ -171,9 +162,7 @@
   color: #9e00c7;
 }
 
-/* =========================
-   ACCOUNT PANELS
-========================= */
+/* ACCOUNT PANELS */
 
 .account-columns {
   display: grid;
@@ -226,9 +215,7 @@
   font-size: 17px;
 }
 
-/* =========================
-   WALLET CARD
-========================= */
+/* WALLET CARD */
 
 .wallet-card {
   padding: 22px;
@@ -294,9 +281,7 @@
   color: #9e00c7;
 }
 
-/* =========================
-   SAVED PAYMENT METHODS
-========================= */
+/* SAVED PAYMENT METHODS */
 
 .saved-card {
   display: flex;
@@ -372,10 +357,7 @@
   line-height: 1.6;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-
+/* BUTTONS */
 .account-primary-button,
 .account-outline-button {
   display: inline-flex;
@@ -421,9 +403,7 @@
   margin-top: 5px;
 }
 
-/* =========================
-   ADD PAYMENT FORM
-========================= */
+/* ADD PAYMENT FORM */
 
 .payment-form {
   display: flex;
@@ -477,9 +457,7 @@
   line-height: 1.6;
 }
 
-/* =========================
-   INVOICES TABLE
-========================= */
+/* INVOICES TABLE */
 
 .account-section {
   margin-bottom: 22px;
@@ -581,9 +559,7 @@
   color: #697586;
 }
 
-/* =========================
-   TRANSACTIONS
-========================= */
+/* TRANSACTIONS */
 
 .transaction-list {
   display: flex;
@@ -664,9 +640,7 @@
   color: #a66a0d;
 }
 
-/* =========================
-   BILLING INFORMATION
-========================= */
+/* BILLING INFORMATION */
 
 .billing-form {
   display: grid;
@@ -699,9 +673,7 @@
   gap: 10px;
 }
 
-/* =========================
-   SHARED FOOTER
-========================= */
+/* SHARED FOOTER */
 
 .account-page .doctor-footer {
   margin-top: 35px;
@@ -736,9 +708,7 @@
   color: #d0d5dd;
 }
 
-/* =========================================
-   DARK MODE - MAIN PAGE
-========================================= */
+/* DARK MODE - MAIN PAGE */
 
 body.dark-mode .account-page {
   background: #0f172a;
@@ -746,9 +716,7 @@ body.dark-mode .account-page {
   color-scheme: dark;
 }
 
-/* =========================================
-   DARK MODE - HEADING
-========================================= */
+/* DARK MODE - HEADING */
 
 body.dark-mode .account-page .account-eyebrow {
   color: #f0abfc;
@@ -767,9 +735,7 @@ body.dark-mode .account-page .account-avatar {
   color: #ffffff;
 }
 
-/* =========================================
-   DARK MODE - MESSAGE
-========================================= */
+/* DARK MODE - MESSAGE */
 
 body.dark-mode .account-page .account-message {
   background: linear-gradient(120deg, #312044, #241d47);
@@ -781,9 +747,7 @@ body.dark-mode .account-page .account-message button {
   color: #ffffff;
 }
 
-/* =========================================
-   DARK MODE - SUMMARY CARDS
-========================================= */
+/* DARK MODE - SUMMARY CARDS */
 
 body.dark-mode .account-page .summary-card {
   background: #1e293b;
@@ -818,9 +782,7 @@ body.dark-mode .account-page .balance-card h2 {
   color: #f0abfc;
 }
 
-/* =========================================
-   DARK MODE - ACCOUNT PANELS
-========================================= */
+/* DARK MODE - ACCOUNT PANELS */
 
 body.dark-mode .account-page .account-panel {
   background: #1e293b;
@@ -842,9 +804,7 @@ body.dark-mode .account-page .panel-icon {
   color: #ffffff;
 }
 
-/* =========================================
-   DARK MODE - WALLET
-========================================= */
+/* DARK MODE - WALLET */
 
 body.dark-mode .account-page .wallet-card {
   background: linear-gradient(135deg, #c026d3, #7e22ce);
@@ -866,9 +826,7 @@ body.dark-mode .account-page .wallet-note i {
   color: #f0abfc;
 }
 
-/* =========================================
-   DARK MODE - SAVED PAYMENT METHODS
-========================================= */
+/* DARK MODE - SAVED PAYMENT METHODS */
 
 body.dark-mode .account-page .saved-card {
   background: #263449;
@@ -906,9 +864,7 @@ body.dark-mode .account-page .empty-state {
   color: #e2e8f0;
 }
 
-/* =========================================
-   DARK MODE - BUTTONS
-========================================= */
+/* DARK MODE - BUTTONS */
 
 body.dark-mode .account-page .account-primary-button {
   background: linear-gradient(135deg, #c026d3, #7e22ce);
@@ -931,9 +887,7 @@ body.dark-mode .account-page .account-outline-button:hover {
   color: #ffffff;
 }
 
-/* =========================================
-   DARK MODE - PAYMENT FORM
-========================================= */
+/* DARK MODE - PAYMENT FORM */
 
 body.dark-mode .account-page .payment-form {
   background: #263449;
@@ -978,9 +932,7 @@ body.dark-mode .account-page .payment-form small {
   color: #cbd5e1;
 }
 
-/* =========================================
-   DARK MODE - BILLING INFORMATION
-========================================= */
+/* DARK MODE - BILLING INFORMATION */
 
 body.dark-mode .account-page .billing-field input:disabled {
   background: #263449;
@@ -989,9 +941,7 @@ body.dark-mode .account-page .billing-field input:disabled {
   opacity: 1;
 }
 
-/* =========================================
-   DARK MODE - INVOICES TABLE
-========================================= */
+/* DARK MODE - INVOICES TABLE */
 
 body.dark-mode .account-page .account-table th {
   background: #312044;
@@ -1011,9 +961,7 @@ body.dark-mode .account-page .account-table tbody tr:hover {
   background: #334155;
 }
 
-/* =========================================
-   DARK MODE - STATUS BADGES
-========================================= */
+/* DARK MODE - STATUS BADGES */
 
 body.dark-mode .account-page .status-badge.paid {
   background: #14532d;
@@ -1025,9 +973,7 @@ body.dark-mode .account-page .status-badge.pending {
   color: #fef3c7;
 }
 
-/* =========================================
-   DARK MODE - INVOICE BUTTONS
-========================================= */
+/* DARK MODE - INVOICE BUTTONS */
 
 body.dark-mode .account-page .table-action {
   background: #334155;
@@ -1055,9 +1001,7 @@ body.dark-mode .account-page .invoice-details small {
   color: #cbd5e1;
 }
 
-/* =========================================
-   DARK MODE - TRANSACTIONS
-========================================= */
+/* DARK MODE - TRANSACTIONS */
 
 body.dark-mode .account-page .transaction-row {
   border-bottom-color: #475569;
@@ -1086,9 +1030,7 @@ body.dark-mode .account-page .transaction-pending {
   color: #fcd34d;
 }
 
-/* =========================================
-   DARK MODE - ICON VISIBILITY
-========================================= */
+/* DARK MODE - ICON VISIBILITY */
 
 body.dark-mode .account-page .summary-top i,
 body.dark-mode .account-page .panel-icon i,
@@ -1110,9 +1052,7 @@ body.dark-mode .account-page .account-avatar svg {
   visibility: visible;
 }
 
-/* =========================================
-   DARK MODE - FOOTER
-========================================= */
+/* DARK MODE */
 
 body.dark-mode .account-page .doctor-footer {
   border-top-color: #475569;
@@ -1138,9 +1078,7 @@ body.dark-mode .account-page select:focus-visible {
   outline-color: #e879f9;
 }
 
-/* =========================
-   TABLET RESPONSIVE DESIGN
-========================= */
+/* TABLET RESPONSIVE DESIGN */
 
 @media (max-width: 1000px) {
   .account-page {
@@ -1164,9 +1102,7 @@ body.dark-mode .account-page select:focus-visible {
   }
 }
 
-/* =========================
-   MOBILE RESPONSIVE DESIGN
-========================= */
+/* MOBILE RESPONSIVE DESIGN */
 
 @media (max-width: 650px) {
   .account-page {
@@ -1304,9 +1240,7 @@ body.dark-mode .account-page select:focus-visible {
   }
 }
 
-/* =========================
-   EXTRA SMALL PHONES
-========================= */
+/* EXTRA SMALL PHONES */
 
 @media (max-width: 360px) {
   .account-page {
@@ -1346,9 +1280,7 @@ body.dark-mode .account-page select:focus-visible {
   }
 }
 
-/* =========================================
-   SMOOTH THEME TRANSITIONS
-========================================= */
+/* SMOOTH THEME TRANSITIONS */
 
 .account-page,
 .account-page .summary-card,
@@ -1367,9 +1299,7 @@ body.dark-mode .account-page select:focus-visible {
     border-color 0.3s ease;
 }
 
-/* =========================================
-   REDUCED MOTION
-========================================= */
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   .account-page,

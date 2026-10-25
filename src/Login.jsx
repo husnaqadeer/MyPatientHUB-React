@@ -1,13 +1,12 @@
-
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Login.css';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Login.css";
 
 function Login() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -15,22 +14,22 @@ function Login() {
     event.preventDefault();
 
     if (!name.trim() || !email.trim()) {
-      setMessage('Please enter your name and email address.');
+      setMessage("Please enter your name and email address.");
       return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setMessage('Please enter a valid email address.');
+      setMessage("Please enter a valid email address.");
       return;
     }
 
     if (rememberMe) {
-      localStorage.setItem('mypatienthub-email', email);
+      localStorage.setItem("mypatienthub-email", email);
     } else {
-      localStorage.removeItem('mypatienthub-email');
+      localStorage.removeItem("mypatienthub-email");
     }
 
-    navigate('/dashboard');
+    navigate("/dashboard");
   }
 
   return (
@@ -49,7 +48,7 @@ function Login() {
               type="button"
               aria-label="Facebook sign in"
               onClick={() =>
-                setMessage('Facebook sign in is not connected yet.')
+                setMessage("Facebook sign in is not connected yet.")
               }
             >
               <i className="fa-brands fa-facebook-f"></i>
@@ -58,9 +57,7 @@ function Login() {
             <button
               type="button"
               aria-label="Google sign in"
-              onClick={() =>
-                setMessage('Google sign in is not connected yet.')
-              }
+              onClick={() => setMessage("Google sign in is not connected yet.")}
             >
               <i className="fa-brands fa-google"></i>
             </button>

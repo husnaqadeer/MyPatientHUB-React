@@ -1,28 +1,27 @@
-
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './ForgotPassword.css';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./ForgotPassword.css";
 
 function ForgotPassword() {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
 
     if (!email.trim()) {
-      setMessage('Please enter your email address.');
+      setMessage("Please enter your email address.");
       return;
     }
 
-    if (!email.includes('@') || !email.includes('.')) {
-      setMessage('Please enter a valid email address.');
+    if (!email.includes("@") || !email.includes(".")) {
+      setMessage("Please enter a valid email address.");
       return;
     }
 
-    navigate('/dashboard');
+    navigate("/dashboard");
   }
 
   return (
@@ -37,8 +36,8 @@ function ForgotPassword() {
         <h1>Forgot Password?</h1>
 
         <p>
-          Don't worry! Enter the email address linked to your
-          MyPatientHUB account, and we'll help you reset your password.
+          Don't worry! Enter the email address linked to your MyPatientHUB
+          account, and we'll help you reset your password.
         </p>
 
         <form onSubmit={handleSubmit}>
